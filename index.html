@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Onboarding Metrics Dashboard</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); color: #f1f5f9; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    .card { background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 16px; }
+    .card-header { background: #1e3a5f; color: #ffffff; padding: 12px 16px; border-radius: 6px 6px 0 0; font-weight: 600; margin: -16px -16px 16px -16px; }
+    .table-header { background: #1e3a5f; color: #ffffff; padding: 8px; text-align: center; font-size: 11px; font-weight: 600; border: 1px solid #334155; }
+    .table-row { background: #162032; border: 1px solid #334155; }
+    .table-row:hover { background: #1e293b; }
+    .table-cell { padding: 8px; border-right: 1px solid #334155; text-align: center; font-size: 12px; }
+    .table-cell-left { text-align: left; }
+    .badge-success { background: #14532d; color: #86efac; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 600; }
+    .badge-warning { background: #422006; color: #fcd34d; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 600; }
+    .badge-danger { background: #450a0a; color: #fca5a5; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 600; }
+    .chart-container { position: relative; height: 300px; margin: 20px 0; }
+    .loading { text-align: center; padding: 40px; color: #94a3b8; }
+    .tab-button { padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s; margin: 0 8px; border: none; }
+    .tab-button.active { background: #2563eb; color: white; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4); }
+    .tab-button.inactive { background: #475569; color: #cbd5e1; }
+    .tab-button:hover { opacity: 0.9; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    const { useState, useEffect, useRef } = React;
+    const e = React.createElement;
+
+    // ==================== TTGL SECTION ====================
+    function TTGLSection() {
+      const [data, setData] = useState(null);
+      const [loading, setLoading] = useState(true);
+      const chartRef = useRef(null);
+      const slaChartRef = useRef(null);
+      const chartInstance = useRef(null);
+      const slaInstance = useRef(null);
+
+      useEffect(() => {
+        fetch('./ttgl_data.json')
+          .then(r => r.json())
+          .then(d => { setData(d); setLoading(false); })
+          .catch(err => { console.error(err); setLoading(false); });
+      }, []);
+
+      useEffect(() => {
+        if (!data || !chartRef.current) return;
+        if (chartInstance.current) chartInstance.current.destroy();
+        
+        const { months, ttglData } = data;
+        const COLORS = { INDIA: '#60a5fa', MEENA: '#93c5fd', UK: '#3b82f6', US: '#1d4ed8' };
+        const datasets = ttglData.map(row => ({
+          label: row.region,
+          data: months.map(m => row.months[m] ?? null),
+          backgroundColor: COLORS[row.region] + '33',
+          borderColor: COLORS[row.region],
+          borderWidth: 2, pointRadius: 4, tension: 0.3, spanGaps: false
+        }));
+
+        chartInstance.current = new Chart(chartRef.current, {
+          type: 'line',
+          data: { labels: months, datasets },
+          options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: {
+              legend: { labels: { color: '#cbd5e1' } },
+              tooltip: { callbacks: { label: ctx => ctx.raw != null ? `${ctx.dataset.label}: ${ctx.raw.toFixed(1)} days` : 'N/A' } }
+            },
+            scales: {
+              x: { ticks: { color: '#94a3b8' }, grid: { color: '#1e293b' } },
+              y: { ticks: { color: '#94a3b8', callback: v => `${v}d` }, grid: { color: '#1e293b' } }
+            }
+          }
+        });
+      }, [data]);
+
+      useEffect(() => {
+        if (!data || !slaChartRef.current) return;
+        if (slaInstance.current) slaInstance.current.destroy();
+        
+        const { months, slaData } = data;
+        const COLORS = { INDIA: '#60a5fa', MEENA: '#93c5fd', UK: '#3b82f6', US: '#1d4ed8' };
+        const datasets = slaData.map(row => ({
+          label: row.region,
+          data: months.map(m => row.months[m]?.slaPct ?? null),
+          backgroundColor: COLORS[row.region] + '33',
+          borderColor: COLORS[row.region],
+          borderWidth: 2, pointRadius: 4, tension: 0.3, spanGaps: false
+        }));
+
+        slaInstance.current = new Chart(slaChartRef.current, {
+          type: 'line',
+          data: { labels: months, datasets },
+          options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: {
+              legend: { labels: { color: '#cbd5e1' } },
+              tooltip: { callbacks: { label: ctx => ctx.raw != null ? `${ctx.dataset.label}: ${ctx.raw.toFixed(1)}%` : 'N/A' } }
+            },
+            scales: {
+              x: { ticks: { color: '#94a3b8' }, grid: { color: '#1e293b' } },
+              y: { min: 0, max: 100, ticks: { color: '#94a3b8', callback: v => `${v}%` }, grid: { color: '#1e293b' } }
+            }
+          }
+        });
+      }, [data]);
+
+      if (loading) return e('div', { className: 'loading' }, '⏳ Loading TTGL data...');
+
+      return e('div', { className: 'space-y-6' },
+        e('div', { className: 'card' },
+          e('div', { className: 'card-header' }, '📊 Time To Go Live (TTGL) Trend'),
+          e('div', { className: 'chart-container' }, e('canvas', { ref: chartRef }))
+        ),
+        e('div', { className: 'card' },
+          e('div', { className: 'card-header' }, '✅ SLA Compliance (14-day target)'),
+          e('div', { className: 'chart-container' }, e('canvas', { ref: slaChartRef }))
+        ),
+        e('div', { className: 'card' },
+          e('div', { className: 'card-header' }, '📋 Project Status Summary'),
+          data.months && data.months.length > 0 ? e('table', { style: { width: '100%', borderCollapse: 'collapse' } },
+            e('thead', null,
+              e('tr', null,
+                e('th', { className: 'table-header' }, 'Month'),
+                e('th', { className: 'table-header' }, 'Region'),
+                e('th', { className: 'table-header' }, 'Total'),
+                e('th', { className: 'table-header' }, 'Live'),
+                e('th', { className: 'table-header' }, 'Open'),
+                e('th', { className: 'table-header' }, 'Dropped')
+              )
+            ),
+            e('tbody', null,
+              data.months.flatMap(month =>
+                ['INDIA', 'MEENA', 'UK', 'US'].map((region, idx) =>
+                  e('tr', { key: `${month}-${region}`, className: 'table-row' },
+                    e('td', { className: 'table-cell table-cell-left' }, idx === 0 ? month : ''),
+                    e('td', { className: 'table-cell table-cell-left' }, region),
+                    e('td', { className: 'table-cell' }, data.totalCount.find(r => r.region === region)?.months[month] ?? '—'),
+                    e('td', { className: 'table-cell' }, data.liveCount.find(r => r.region === region)?.months[month] ?? '—'),
+                    e('td', { className: 'table-cell' }, data.openCount.find(r => r.region === region)?.months[month] ?? '—'),
+                    e('td', { className: 'table-cell' }, data.droppedCount.find(r => r.region === region)?.months[month] ?? '—')
+                  )
+                )
+              )
+            )
+          ) : e('div', { className: 'loading' }, 'No data')
+        )
+      );
+    }
+
+    // ==================== REVREC SECTION ====================
+    function RevRecSection() {
+      const [data, setData] = useState(null);
+      const [loading, setLoading] = useState(true);
+
+      useEffect(() => {
+        fetch('./revrec_data.json')
+          .then(r => r.json())
+          .then(d => { setData(d); setLoading(false); })
+          .catch(err => { console.error(err); setLoading(false); });
+      }, []);
+
+      if (loading) return e('div', { className: 'loading' }, '⏳ Loading Revenue Realisation data...');
+      if (!data || !data.regions) return e('div', { className: 'loading' }, '❌ No data available');
+
+      return e('div', { className: 'space-y-8' },
+        ...data.regions.map(region => {
+          const cohorts = region.cohorts || [];
+          return e('div', { key: region.name, className: 'card' },
+            e('div', { className: 'card-header' }, `🌏 ${region.name}`),
+            e('table', { style: { width: '100%', borderCollapse: 'collapse', fontSize: '11px' } },
+              e('thead', null,
+                e('tr', null,
+                  e('th', { className: 'table-header' }, 'Cohort'),
+                  e('th', { className: 'table-header' }, 'CW Value'),
+                  e('th', { className: 'table-header' }, 'M0'),
+                  e('th', { className: 'table-header' }, 'M1'),
+                  e('th', { className: 'table-header' }, 'M2'),
+                  e('th', { className: 'table-header' }, 'M3'),
+                  e('th', { className: 'table-header' }, 'M4'),
+                  e('th', { className: 'table-header' }, 'M5'),
+                  e('th', { className: 'table-header' }, 'M6+'),
+                  e('th', { className: 'table-header' }, 'Rev Realised'),
+                  e('th', { className: 'table-header' }, '% Realised')
+                )
+              ),
+              e('tbody', null,
+                cohorts.map(cohort => {
+                  const months = ['m0', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6Plus'];
+                  const values = months.map(m => cohort.mrr[m] || 0);
+                  const totalRev = values.reduce((a, b) => a + b, 0);
+                  const cwValue = cohort.cwValue || 1;
+                  const realizationPct = ((totalRev / cwValue) * 100).toFixed(1);
+
+                  return e('tr', { key: cohort.cohortMonthYear, className: 'table-row' },
+                    e('td', { className: 'table-cell table-cell-left' }, cohort.cohortMonthYear),
+                    e('td', { className: 'table-cell' }, `$${cwValue.toLocaleString()}`),
+                    ...values.map((val, i) => e('td', { key: i, className: 'table-cell' }, `$${val.toLocaleString()}`)),
+                    e('td', { className: 'table-cell' }, `$${totalRev.toLocaleString()}`),
+                    e('td', { className: 'table-cell' }, `${realizationPct}%`)
+                  );
+                })
+              )
+            )
+          );
+        })
+      );
+    }
+
+    // ==================== OM SECTION ====================
+    function OMSection() {
+      const [data, setData] = useState(null);
+      const [loading, setLoading] = useState(true);
+
+      useEffect(() => {
+        fetch('./om_performance.json')
+          .then(r => r.json())
+          .then(d => { setData(d); setLoading(false); })
+          .catch(err => { console.error(err); setLoading(false); });
+      }, []);
+
+      if (loading) return e('div', { className: 'loading' }, '⏳ Loading OM Performance data...');
+      if (!data || !data.oms) return e('div', { className: 'loading' }, '❌ No data available');
+
+      return e('div', { className: 'space-y-6' },
+        e('div', { className: 'card' },
+          e('div', { className: 'card-header' }, '👥 OM Leaderboard'),
+          e('table', { style: { width: '100%', borderCollapse: 'collapse' } },
+            e('thead', null,
+              e('tr', null,
+                e('th', { className: 'table-header' }, 'OM Name'),
+                e('th', { className: 'table-header' }, 'Region'),
+                e('th', { className: 'table-header' }, 'Projects'),
+                e('th', { className: 'table-header' }, 'Live'),
+                e('th', { className: 'table-header' }, 'SLA %'),
+                e('th', { className: 'table-header' }, 'Avg TTGL')
+              )
+            ),
+            e('tbody', null,
+              data.oms.map(om => e('tr', { key: om.name, className: 'table-row' },
+                e('td', { className: 'table-cell table-cell-left' }, om.name),
+                e('td', { className: 'table-cell table-cell-left' }, om.region),
+                e('td', { className: 'table-cell' }, om.totalProjects),
+                e('td', { className: 'table-cell' }, om.liveCount),
+                e('td', { className: 'table-cell' }, `${om.slaPct?.toFixed(1)}%`),
+                e('td', { className: 'table-cell' }, `${om.avgTTGL?.toFixed(1)}d`)
+              ))
+            )
+          )
+        )
+      );
+    }
+
+    // ==================== MAIN APP ====================
+    function App() {
+      const [tab, setTab] = useState('ttgl');
+
+      return e('div', { style: { minHeight: '100vh', padding: '24px' } },
+        e('div', { style: { maxWidth: '1280px', margin: '0 auto' } },
+          e('h1', { style: { fontSize: '32px', fontWeight: 'bold', textAlign: 'center', marginBottom: '32px' } }, 
+            '🌍 Global Onboarding Metrics Dashboard'
+          ),
+          e('div', { style: { display: 'flex', justifyContent: 'center', gap: '16px', marginBottom: '32px' } },
+            e('button', { 
+              onClick: () => setTab('ttgl'), 
+              className: tab === 'ttgl' ? 'tab-button active' : 'tab-button inactive' 
+            }, '📊 TTGL'),
+            e('button', { 
+              onClick: () => setTab('revrec'), 
+              className: tab === 'revrec' ? 'tab-button active' : 'tab-button inactive' 
+            }, '💰 Revenue Realisation'),
+            e('button', { 
+              onClick: () => setTab('om'), 
+              className: tab === 'om' ? 'tab-button active' : 'tab-button inactive' 
+            }, '👥 OM Performance')
+          ),
+          e('div', null,
+            tab === 'ttgl' && TTGLSection(),
+            tab === 'revrec' && RevRecSection(),
+            tab === 'om' && OMSection()
+          )
+        )
+      );
+    }
+
+    // ==================== RENDER ====================
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(App());
+  </script>
+</body>
+</html>
