@@ -1,88 +1,708 @@
-<!doctype html>
-<html data-theme="alfred-light">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@5" type="text/css" />
-    <style>[data-theme='alfred-light'] {
-  color-scheme: light;
-  --radius-selector: 0rem;
-  --radius-field: 0.25rem;
-  --radius-box: 0.25rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 1px;
-  --depth: 1;
-  --noise: 0;
-  --color-base-100: #f5f5f5;
-  --color-base-200: #eaeaea;
-  --color-base-300: #dfdfdf;
-  --color-base-content: #1c1c1e;
-  --color-primary: #4f6f52;
-  --color-primary-content: #ffffff;
-  --color-secondary: #ff7f50;
-  --color-secondary-content: #1c1c1e;
-  --color-accent: #ff7f50;
-  --color-accent-content: #1c1c1e;
-  --color-neutral: #1f1f23;
-  --color-neutral-content: #e8e8ec;
-  --color-info: #4a7c9b;
-  --color-info-content: #f4f4f5;
-  --color-success: #3d8b6e;
-  --color-success-content: #f4f4f5;
-  --color-warning: #b8860b;
-  --color-warning-content: #1c1c1e;
-  --color-error: #9e3d32;
-  --color-error-content: #f4f4f5;
-}
-[data-theme='alfred-dark'] {
-  color-scheme: dark;
-  --radius-selector: 0rem;
-  --radius-field: 0.25rem;
-  --radius-box: 0.25rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 1px;
-  --depth: 1;
-  --noise: 0;
-  --color-base-100: #121215;
-  --color-base-200: #1a1a1e;
-  --color-base-300: #252529;
-  --color-base-content: #f4f4f5;
-  --color-primary: #4f6f52;
-  --color-primary-content: #ffffff;
-  --color-secondary: #ff7f50;
-  --color-secondary-content: #1c1c1e;
-  --color-accent: #ff7f50;
-  --color-accent-content: #1c1c1e;
-  --color-neutral: #3a3a42;
-  --color-neutral-content: #b8b8c0;
-  --color-info: #4a7c9b;
-  --color-info-content: #f4f4f5;
-  --color-success: #3d8b6e;
-  --color-success-content: #f4f4f5;
-  --color-warning: #b8860b;
-  --color-warning-content: #1c1c1e;
-  --color-error: #9e3d32;
-  --color-error-content: #f4f4f5;
-}
-</style>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onboarding Metrics Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
 
-    <script crossorigin src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-    <script>
-      (function() {
-        var theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'alfred-dark' : 'alfred-light';
-        document.documentElement.setAttribute('data-theme', theme);
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-          document.documentElement.setAttribute('data-theme', e.matches ? 'alfred-dark' : 'alfred-light');
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      background: #0f172a; 
+      color: #f1f5f9; 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.5;
+    }
+    .data-path {
+      position: fixed;
+      bottom: 8px;
+      right: 8px;
+      font-size: 10px;
+      color: #64748b;
+      background: #1e293b;
+      padding: 4px 8px;
+      border-radius: 4px;
+      z-index: 999;
+    }
+    .tab-button {
+      padding: 8px 16px;
+      margin-right: 8px;
+      border: none;
+      background: #1e293b;
+      color: #94a3b8;
+      cursor: pointer;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .tab-button.active {
+      background: #1e3a5f;
+      color: #ffffff;
+    }
+    .tab-button:hover {
+      background: #334155;
+    }
+    .card {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    th {
+      background: #1e3a5f;
+      color: #ffffff;
+      padding: 6px 8px;
+      text-align: center;
+      font-weight: 600;
+      border: 1px solid #334155;
+    }
+    th.text-left {
+      text-align: left;
+    }
+    td {
+      padding: 6px 8px;
+      border: 1px solid #334155;
+      text-align: center;
+    }
+    td.text-left {
+      text-align: left;
+    }
+    .loading { text-align: center; padding: 40px; color: #94a3b8; }
+    .error { color: #fca5a5; background: #450a0a; padding: 12px; border-radius: 4px; margin: 16px 0; }
+    .refresh-label { font-size: 11px; color: #64748b; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
+
+    // ══════════════════════════════════════════════════════════════════
+    // UTILITIES
+    // ══════════════════════════════════════════════════════════════════
+    async function loadJSON(filename) {
+      try {
+        const response = await fetch(filename);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return await response.json();
+      } catch (error) {
+        console.error(`Failed to load ${filename}:`, error);
+        return null;
+      }
+    }
+
+    const REGION_COLORS = {
+      INDIA: '#60a5fa', MEENA: '#93c5fd', UK: '#3b82f6', US: '#1d4ed8',
+    };
+
+    // ══════════════════════════════════════════════════════════════════
+    // TTGL SECTION
+    // ══════════════════════════════════════════════════════════════════
+    const TTGLSection = () => {
+      const [store, setStore] = useState(null);
+      const [loading, setLoading] = useState(true);
+      const chartRef = useRef(null);
+      const slaChartRef = useRef(null);
+      const chartInstance = useRef(null);
+      const slaChartInstance = useRef(null);
+
+      useEffect(() => {
+        loadJSON('ttgl_data.json').then((data) => {
+          setStore(data);
+          setLoading(false);
         });
-      })();
-    </script>
-  </head>
-  <body class="bg-base-100 text-base-content">
-    <div id="root"></div>
-    <script src="bundle.js"></script>
-  </body>
+      }, []);
+
+      useEffect(() => {
+        if (!store || !chartRef.current) return;
+        if (chartInstance.current) chartInstance.current.destroy();
+        const { months, ttglData } = store;
+        const datasets = ttglData.map((row) => ({
+          label: row.region,
+          data: months.map((m) => row.months[m] ?? null),
+          backgroundColor: REGION_COLORS[row.region] + '33',
+          borderColor: REGION_COLORS[row.region],
+          borderWidth: 2, pointRadius: 4, pointHoverRadius: 6, tension: 0.3, spanGaps: false,
+        }));
+        chartInstance.current = new Chart(chartRef.current, {
+          type: 'line',
+          data: { labels: months, datasets },
+          options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: {
+              legend: { labels: { color: '#cbd5e1', font: { size: 12 } } },
+              tooltip: { callbacks: { label: (ctx) => ctx.raw != null ? `${ctx.dataset.label}: ${ctx.raw.toFixed(1)} days` : `${ctx.dataset.label}: N/A` } },
+            },
+            scales: {
+              x: { ticks: { color: '#94a3b8', maxRotation: 45, font: { size: 10 } }, grid: { color: '#1e293b' } },
+              y: { ticks: { color: '#94a3b8', callback: (v) => `${v}d` }, grid: { color: '#1e293b' }, title: { display: true, text: 'Avg Days to Go Live', color: '#94a3b8' } },
+            },
+          },
+        });
+        return () => { if (chartInstance.current) chartInstance.current.destroy(); };
+      }, [store]);
+
+      useEffect(() => {
+        if (!store || !slaChartRef.current) return;
+        if (slaChartInstance.current) slaChartInstance.current.destroy();
+        const { months, slaData } = store;
+        const slaDatasets = slaData.map((row) => ({
+          label: row.region,
+          data: months.map((m) => row.months[m]?.slaPct ?? null),
+          backgroundColor: REGION_COLORS[row.region] + '33',
+          borderColor: REGION_COLORS[row.region],
+          borderWidth: 2, pointRadius: 4, pointHoverRadius: 6, tension: 0.3, spanGaps: false,
+        }));
+        slaDatasets.push({ label: '100% Target', data: months.map(() => 100), backgroundColor: 'transparent', borderColor: '#ef4444', borderWidth: 1.5, borderDash: [5, 5], pointRadius: 0, tension: 0 });
+        slaChartInstance.current = new Chart(slaChartRef.current, {
+          type: 'line',
+          data: { labels: months, datasets: slaDatasets },
+          options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: {
+              legend: { labels: { color: '#cbd5e1', font: { size: 12 } } },
+              tooltip: { callbacks: { label: (ctx) => ctx.raw != null ? `${ctx.dataset.label}: ${ctx.raw.toFixed(1)}%` : `${ctx.dataset.label}: N/A` } },
+            },
+            scales: {
+              x: { ticks: { color: '#94a3b8', maxRotation: 45, font: { size: 10 } }, grid: { color: '#1e293b' } },
+              y: { min: 0, max: 105, ticks: { color: '#94a3b8', callback: (v) => `${v}%` }, grid: { color: '#1e293b' }, title: { display: true, text: '% Within 14-Day SLA', color: '#94a3b8' } },
+            },
+          },
+        });
+        return () => { if (slaChartInstance.current) slaChartInstance.current.destroy(); };
+      }, [store]);
+
+      if (loading) return <div style={{ color: '#94a3b8', padding: '40px', textAlign: 'center' }}>Loading TTGL data…</div>;
+      if (!store) return <div style={{ color: '#ef4444', padding: '40px', textAlign: 'center' }}>Failed to load TTGL data.</div>;
+
+      const { months, ttglData, liveCount, openAgeData, openCount, totalCount, droppedCount, slaData, slaOverall, ageingData } = store;
+
+      return (
+        <div style={{ padding: '20px', maxWidth: '1400px', margin: '0 auto' }}>
+          <div style={{ fontSize: '10px', color: '#475569', textAlign: 'right', marginBottom: '12px' }}>Last refreshed: {store.computedAt}</div>
+
+          {/* TTGL Summary Cards */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px', marginBottom: '16px' }}>
+            {ttglData.map((row) => {
+              const vals = months.map((m) => row.months[m]).filter((v) => v != null);
+              const latest = vals[vals.length - 1];
+              const prev = vals.length > 1 ? vals[vals.length - 2] : null;
+              const trend = prev != null ? latest - prev : null;
+              return (
+                <div key={row.region} style={{ backgroundColor: '#0f172a', border: '1px solid #334155', borderRadius: '8px', padding: '16px' }}>
+                  <div style={{ fontSize: '11px', color: '#94a3b8', marginBottom: '4px' }}>{row.region}</div>
+                  <div style={{ fontSize: '24px', fontWeight: 700, color: '#f1f5f9' }}>
+                    {latest.toFixed(1)}<span style={{ fontSize: '13px', fontWeight: 400, color: '#64748b' }}> days</span>
+                  </div>
+                  {trend != null && (
+                    <div style={{ fontSize: '11px', marginTop: '4px', color: trend < 0 ? '#86efac' : '#fca5a5' }}>
+                      {trend < 0 ? '▼' : '▲'} {Math.abs(trend).toFixed(1)}d vs prev month
+                    </div>
+                  )}
+                  <div style={{ fontSize: '10px', color: '#475569', marginTop: '4px' }}>Latest available month</div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* TTGL Trend Chart */}
+          <div style={{ backgroundColor: '#0f172a', border: '1px solid #334155', borderRadius: '8px', padding: '16px', marginBottom: '16px' }}>
+            <div style={{ fontSize: '13px', fontWeight: 600, color: '#f1f5f9', marginBottom: '12px' }}>TTGL Trend (Closed Live Projects)</div>
+            <div style={{ width: '100%', height: '240px', position: 'relative' }}><canvas ref={chartRef} /></div>
+          </div>
+
+          {/* TTGL Table */}
+          <div style={{ backgroundColor: '#0f172a', border: '1px solid #334155', borderRadius: '8px', padding: '16px', marginBottom: '16px' }}>
+            <div style={{ fontSize: '13px', fontWeight: 600, color: '#f1f5f9', marginBottom: '4px' }}>Avg Time to Go Live — Days (by project created month)</div>
+            <div style={{ fontSize: '11px', color: '#64748b', marginBottom: '12px' }}>Each region shows two rows: <span style={{ color: '#86efac' }}>✓ Closed Live avg</span> (Close − Created date) and <span style={{ color: '#fbbf24' }}>⏱ Open avg age</span></div>
+            <div style={{ overflowX: 'auto' }}>
+              <table>
+                <thead>
+                  <tr>
+                    <th style={{ textAlign: 'left', width: '160px', position: 'sticky', left: 0, zIndex: 1 }}>Region / Type</th>
+                    {months.map((m) => <th key={m}>{m}</th>)}
+                  </tr>
+                </thead>
+                <tbody>
+                  {ttglData.map((row, i) => {
+                    const openRow = openAgeData.find(r => r.region === row.region);
+                    const openCountRow = openCount.find(r => r.region === row.region);
+                    const bgMain = i % 2 === 0 ? '#1e293b' : '#162032';
+                    return (
+                      <React.Fragment key={row.region}>
+                        <tr style={{ backgroundColor: bgMain }}>
+                          <td style={{ padding: '7px 12px', color: '#f1f5f9', fontWeight: 700, fontSize: '13px', border: '1px solid #334155', borderBottom: 'none', position: 'sticky', left: 0, backgroundColor: bgMain, zIndex: 1, textAlign: 'left' }}>
+                            <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', backgroundColor: REGION_COLORS[row.region], marginRight: '6px' }} />
+                            {row.region}<br/>
+                            <span style={{ fontSize: '10px', color: '#86efac', fontWeight: 400, marginLeft: '14px', marginTop: '2px' }}>✓ Closed Live</span>
+                          </td>
+                          {months.map((m) => {
+                            const val = row.months[m];
+                            const cnt = liveCount.find(r => r.region === row.region)?.months[m] ?? 0;
+                            return (
+                              <td key={m} style={{ padding: '7px 8px', backgroundColor: bgMain, textAlign: 'center' }}>
+                                {val != null ? <><div>{val.toFixed(1)}d</div><div style={{ fontSize: '9px', color: '#475569' }}>n={cnt}</div></> : <span style={{ color: '#475569' }}>—</span>}
+                              </td>
+                            );
+                          })}
+                        </tr>
+                        <tr style={{ backgroundColor: bgMain }}>
+                          <td style={{ padding: '5px 12px', color: '#fbbf24', fontSize: '10px', fontWeight: 400, border: '1px solid #334155', borderTop: 'none', position: 'sticky', left: 0, backgroundColor: bgMain, zIndex: 1, textAlign: 'left' }}>
+                            ⏱ Open avg age
+                          </td>
+                          {months.map((m) => {
+                            const val = openRow?.months[m];
+                            const cnt = openCountRow?.months[m] ?? 0;
+                            return (
+                              <td key={m} style={{ padding: '5px 8px', backgroundColor: bgMain, borderTop: 'none', textAlign: 'center' }}>
+                                {val != null && cnt > 0 ? <><div>{val.toFixed(1)}d</div><div style={{ fontSize: '9px', color: '#475569' }}>n={cnt}</div></> : <span style={{ color: '#334155' }}>—</span>}
+                              </td>
+                            );
+                          })}
+                        </tr>
+                      </React.Fragment>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* SLA Section */}
+          <div style={{ marginBottom: '16px' }}>
+            <div style={{ fontSize: '15px', fontWeight: 700, color: '#f1f5f9', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ display: 'inline-block', width: '4px', height: '18px', backgroundColor: '#3b82f6', borderRadius: '2px' }} />
+              Onboarding SLA Compliance (Target: ≤14 days)
+            </div>
+
+            {/* SLA Summary Cards */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px', marginBottom: '16px' }}>
+              {slaData.map((row) => {
+                const ov = slaOverall[row.region];
+                const monthVals = months.map(m => row.months[m]).filter(v => v != null);
+                const latest = monthVals[monthVals.length - 1];
+                const prev = monthVals.length > 1 ? monthVals[monthVals.length - 2] : null;
+                const trend = prev != null ? latest.slaPct - prev.slaPct : null;
+                const slaColor = ov.slaPct >= 75 ? '#86efac' : ov.slaPct >= 50 ? '#fcd34d' : '#fca5a5';
+                const slaBg = ov.slaPct >= 75 ? '#14532d' : ov.slaPct >= 50 ? '#422006' : '#450a0a';
+                return (
+                  <div key={row.region} style={{ backgroundColor: '#0f172a', border: '1px solid #334155', borderRadius: '8px', padding: '16px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px' }}>
+                      <div style={{ fontSize: '11px', color: '#94a3b8' }}>{row.region}</div>
+                      <span style={{ backgroundColor: slaBg, color: slaColor, borderRadius: '9999px', padding: '2px 8px', fontSize: '11px', fontWeight: 700 }}>{ov.slaPct.toFixed(1)}%</span>
+                    </div>
+                    <div style={{ fontSize: '22px', fontWeight: 700, color: '#f1f5f9' }}>
+                      {ov.withinSLA}<span style={{ fontSize: '12px', fontWeight: 400, color: '#64748b' }}> / {ov.total}</span>
+                    </div>
+                    <div style={{ fontSize: '10px', color: '#475569', marginBottom: '8px' }}>within SLA (all-time)</div>
+                    <div style={{ backgroundColor: '#1e293b', borderRadius: '4px', height: '5px', overflow: 'hidden', marginBottom: '6px' }}>
+                      <div style={{ width: `${Math.min(ov.slaPct, 100)}%`, height: '100%', backgroundColor: REGION_COLORS[row.region] }} />
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '10px', color: '#475569' }}>
+                      <span>Latest: <span style={{ color: slaColor, fontWeight: 600 }}>{latest?.slaPct.toFixed(1)}%</span></span>
+                      {trend != null && <span style={{ color: trend > 0 ? '#86efac' : '#fca5a5' }}>{trend > 0 ? '▲' : '▼'} {Math.abs(trend).toFixed(1)}pp</span>}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* SLA Trend Chart */}
+            <div style={{ backgroundColor: '#0f172a', border: '1px solid #334155', borderRadius: '8px', padding: '16px', marginBottom: '16px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 600, color: '#f1f5f9', marginBottom: '12px' }}>SLA Compliance Trend (14-day target)</div>
+              <div style={{ width: '100%', height: '240px', position: 'relative' }}><canvas ref={slaChartRef} /></div>
+            </div>
+
+            {/* SLA Compliance Table */}
+            <div style={{ backgroundColor: '#0f172a', border: '1px solid #334155', borderRadius: '8px', padding: '16px', marginBottom: '16px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 600, color: '#f1f5f9', marginBottom: '4px' }}>SLA Compliance by Region & Month</div>
+              <div style={{ fontSize: '11px', color: '#64748b', marginBottom: '12px' }}>Each cell shows % within SLA and within/total counts</div>
+              <div style={{ overflowX: 'auto' }}>
+                <table>
+                  <thead>
+                    <tr>
+                      <th style={{ textAlign: 'left', width: '100px', position: 'sticky', left: 0, zIndex: 1 }}>Region</th>
+                      {months.map(m => <th key={m}>{m}</th>)}
+                      <th style={{ backgroundColor: '#172554' }}>Overall</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {slaData.map((row, i) => {
+                      const bg = i % 2 === 0 ? '#1e293b' : '#162032';
+                      const ov = slaOverall[row.region];
+                      return (
+                        <tr key={row.region} style={{ backgroundColor: bg }}>
+                          <td style={{ padding: '8px 12px', color: '#f1f5f9', fontWeight: 700, fontSize: '13px', border: '1px solid #334155', position: 'sticky', left: 0, backgroundColor: bg, zIndex: 1, textAlign: 'left' }}>
+                            <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', backgroundColor: REGION_COLORS[row.region], marginRight: '6px' }} />
+                            {row.region}
+                          </td>
+                          {months.map(m => {
+                            const cell = row.months[m];
+                            return (
+                              <td key={m} style={{ padding: '6px 8px', backgroundColor: bg }}>
+                                {cell != null ? <><div>{cell.slaPct.toFixed(0)}%</div><div style={{ fontSize: '9px', color: '#475569' }}>{cell.withinSLA}/{cell.total}</div></> : <span style={{ color: '#334155' }}>—</span>}
+                              </td>
+                            );
+                          })}
+                          <td style={{ padding: '6px 8px', backgroundColor: '#172554' }}>
+                            <div>{ov.slaPct.toFixed(1)}%</div><div style={{ fontSize: '9px', color: '#94a3b8' }}>{ov.withinSLA}/{ov.total}</div>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          {/* Ageing Section */}
+          <div style={{ backgroundColor: '#0f172a', border: '1px solid #334155', borderRadius: '8px', padding: '16px', marginBottom: '16px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+              <div>
+                <div style={{ fontSize: '14px', fontWeight: 700, color: '#f1f5f9' }}>Open Project Ageing — Region Wise</div>
+                <div style={{ fontSize: '11px', color: '#64748b', marginTop: '2px' }}>Projects not yet Closed Live, as of {store.computedAt}</div>
+              </div>
+              <div style={{ fontSize: '11px', color: '#64748b', backgroundColor: '#1e293b', border: '1px solid #334155', borderRadius: '6px', padding: '4px 10px' }}>
+                Total open: {ageingData.reduce((s, r) => s + r.total, 0)}
+              </div>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
+              {ageingData.map((row) => {
+                const b0_7   = row.total - row.gt7;
+                const b7_14  = row.gt7   - row.gt14;
+                const b14_28 = row.gt14  - row.gt28;
+                const b28_60 = row.gt28  - row.gt60;
+                const b60p   = row.gt60;
+                const ageBuckets = [
+                  { label: '0–7d',   val: b0_7,   color: '#86efac', bg: '#14532d' },
+                  { label: '7–14d',  val: b7_14,  color: '#fcd34d', bg: '#422006' },
+                  { label: '14–28d', val: b14_28, color: '#fb923c', bg: '#431407' },
+                  { label: '28–60d', val: b28_60, color: '#f87171', bg: '#450a0a' },
+                  { label: '60d+',   val: b60p,   color: '#e879f9', bg: '#3b0764' },
+                ];
+                return (
+                  <div key={row.region} style={{ backgroundColor: '#162032', border: '1px solid #334155', borderRadius: '8px', padding: '14px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '8px' }}>
+                      <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: REGION_COLORS[row.region], display: 'inline-block' }} />
+                      <span style={{ fontSize: '12px', fontWeight: 700, color: '#f1f5f9' }}>{row.region}</span>
+                    </div>
+                    <div style={{ fontSize: '28px', fontWeight: 700, color: '#f1f5f9', lineHeight: 1 }}>
+                      {row.total}<span style={{ fontSize: '11px', color: '#64748b', fontWeight: 400, marginLeft: '4px' }}>open</span>
+                    </div>
+                    <div style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                      {ageBuckets.map(({ label, val, color, bg }) => (
+                        <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                          <span style={{ fontSize: '10px', color: '#94a3b8', width: '36px', flexShrink: 0 }}>{label}</span>
+                          <div style={{ flex: 1, backgroundColor: '#0f172a', borderRadius: '4px', height: '6px', overflow: 'hidden' }}>
+                            <div style={{ width: `${row.total > 0 ? Math.round((val / row.total) * 100) : 0}%`, height: '100%', backgroundColor: color }} />
+                          </div>
+                          <span style={{ fontSize: '11px', fontWeight: 600, color, backgroundColor: bg, borderRadius: '4px', padding: '1px 5px', minWidth: '28px', textAlign: 'center' }}>
+                            {val} <span style={{ fontSize: '9px', fontWeight: 400, opacity: 0.8 }}>({row.total > 0 ? Math.round((val / row.total) * 100) : 0}%)</span>
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Project Status Table */}
+          <div style={{ backgroundColor: '#0f172a', border: '1px solid #334155', borderRadius: '8px', padding: '16px' }}>
+            <div style={{ fontSize: '13px', fontWeight: 600, color: '#f1f5f9', marginBottom: '4px' }}>Project Status Summary — Total / Live / Open / Dropped by Created Month</div>
+            <div style={{ fontSize: '11px', color: '#64748b', marginBottom: '12px' }}>
+              <span style={{ color: '#cbd5e1' }}>Tot</span> = all projects · <span style={{ color: '#86efac' }}>Live</span> = Closed Live · <span style={{ color: '#fbbf24' }}>Open</span> = still in progress · <span style={{ color: '#f87171' }}>Drop</span> = Closed Dropped
+            </div>
+            <div style={{ overflowX: 'auto' }}>
+              <table>
+                <thead>
+                  <tr>
+                    <th style={{ textAlign: 'left', position: 'sticky', left: 0, zIndex: 1 }} rowSpan={2}>Region</th>
+                    {months.map(m => <th key={m} colSpan={4} style={{ borderBottom: '1px solid #1e3a5f' }}>{m}</th>)}
+                  </tr>
+                  <tr>
+                    {months.map(m => (
+                      <React.Fragment key={m}>
+                        <th style={{ fontSize: '10px', fontWeight: 500, color: '#94a3b8', backgroundColor: '#162032' }}>Tot</th>
+                        <th style={{ fontSize: '10px', fontWeight: 500, color: '#86efac', backgroundColor: '#162032' }}>Live</th>
+                        <th style={{ fontSize: '10px', fontWeight: 500, color: '#fbbf24', backgroundColor: '#162032' }}>Open</th>
+                        <th style={{ fontSize: '10px', fontWeight: 500, color: '#f87171', backgroundColor: '#162032' }}>Drop</th>
+                      </React.Fragment>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {totalCount.map((row, i) => {
+                    const liveRow = liveCount.find(r => r.region === row.region);
+                    const openCountRow = openCount.find(r => r.region === row.region);
+                    const droppedRow = droppedCount.find(r => r.region === row.region);
+                    const bg = i % 2 === 0 ? '#1e293b' : '#162032';
+                    return (
+                      <tr key={row.region} style={{ backgroundColor: bg }}>
+                        <td style={{ padding: '10px 12px', color: '#f1f5f9', fontWeight: 700, fontSize: '13px', border: '1px solid #334155', position: 'sticky', left: 0, backgroundColor: bg, zIndex: 1, textAlign: 'left' }}>
+                          <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', backgroundColor: REGION_COLORS[row.region], marginRight: '8px' }} />
+                          {row.region}
+                        </td>
+                        {months.map(m => {
+                          const tot = row.months[m] ?? 0;
+                          const live = liveRow?.months[m] ?? 0;
+                          const open = openCountRow?.months[m] ?? 0;
+                          const drop = droppedRow?.months[m] ?? 0;
+                          return (
+                            <React.Fragment key={m}>
+                              <td style={{ padding: '7px 5px', backgroundColor: bg, color: '#cbd5e1', fontSize: '12px', fontWeight: 600 }}>{tot || '—'}</td>
+                              <td style={{ padding: '7px 5px', backgroundColor: bg }}>{live > 0 ? <span style={{ color: '#86efac', fontWeight: 600, fontSize: '12px' }}>{live}</span> : <span style={{ color: '#334155' }}>—</span>}</td>
+                              <td style={{ padding: '7px 5px', backgroundColor: bg }}>{open > 0 ? <span style={{ color: '#fbbf24', fontWeight: 600, fontSize: '12px' }}>{open}</span> : <span style={{ color: '#334155' }}>—</span>}</td>
+                              <td style={{ padding: '7px 5px', backgroundColor: bg }}>{drop > 0 ? <span style={{ color: '#f87171', fontWeight: 600, fontSize: '12px' }}>{drop}</span> : <span style={{ color: '#334155' }}>—</span>}</td>
+                            </React.Fragment>
+                          );
+                        })}
+                      </tr>
+                    );
+                  })}
+                  <tr style={{ backgroundColor: '#172554' }}>
+                    <td style={{ padding: '10px 12px', border: '1px solid #334155', fontWeight: 700, color: '#f1f5f9', fontSize: '13px', position: 'sticky', left: 0, backgroundColor: '#172554', zIndex: 1, textAlign: 'left' }}>TOTAL</td>
+                    {months.map(m => {
+                      const tot  = totalCount.reduce((s, r) => s + (r.months[m] ?? 0), 0);
+                      const live = liveCount.reduce((s, r) => s + (r.months[m] ?? 0), 0);
+                      const open = openCount.reduce((s, r) => s + (r.months[m] ?? 0), 0);
+                      const drop = droppedCount.reduce((s, r) => s + (r.months[m] ?? 0), 0);
+                      return (
+                        <React.Fragment key={m}>
+                          <td style={{ padding: '7px 5px', backgroundColor: '#172554', color: '#cbd5e1', fontSize: '12px', fontWeight: 600 }}>{tot}</td>
+                          <td style={{ padding: '7px 5px', backgroundColor: '#172554', color: '#86efac', fontSize: '12px', fontWeight: 600 }}>{live}</td>
+                          <td style={{ padding: '7px 5px', backgroundColor: '#172554', color: '#fbbf24', fontSize: '12px', fontWeight: 600 }}>{open}</td>
+                          <td style={{ padding: '7px 5px', backgroundColor: '#172554', color: '#f87171', fontSize: '12px', fontWeight: 600 }}>{drop}</td>
+                        </React.Fragment>
+                      );
+                    })}
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    // ══════════════════════════════════════════════════════════════════
+    // REVENUE REALISATION SECTION
+    // ══════════════════════════════════════════════════════════════════
+    const RevRecSection = () => {
+      const [store, setStore] = useState(null);
+      const [loading, setLoading] = useState(true);
+
+      useEffect(() => {
+        loadJSON('revrec_data.json').then((data) => {
+          setStore(data);
+          setLoading(false);
+        });
+      }, []);
+
+      if (loading) return <div style={{ color: '#94a3b8', padding: '40px', textAlign: 'center' }}>Loading Revenue Realisation data…</div>;
+      if (!store) return <div style={{ color: '#ef4444', padding: '40px', textAlign: 'center' }}>Failed to load Revenue Realisation data.</div>;
+
+      const { computedAt, regions, openPendingMRR } = store;
+
+      return (
+        <div style={{ padding: '20px', maxWidth: '1400px', margin: '0 auto' }}>
+          <div style={{ fontSize: '10px', color: '#475569', textAlign: 'right', marginBottom: '12px' }}>Last refreshed: {computedAt}</div>
+
+          {/* Pending MRR Cards */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px', marginBottom: '16px' }}>
+            {['INDIA', 'MEENA', 'UK', 'US'].map((regionName) => {
+              const pendingData = openPendingMRR?.[regionName] || { mrr: 0, count: 0 };
+              return (
+                <div key={regionName} style={{ backgroundColor: '#0f172a', border: '1px solid #334155', borderRadius: '8px', padding: '16px' }}>
+                  <div style={{ fontSize: '11px', color: '#94a3b8', marginBottom: '4px' }}>{regionName} - Pending MRR (Open Only)</div>
+                  <div style={{ fontSize: '28px', fontWeight: 700, color: '#f1f5f9' }}>
+                    ${(pendingData.mrr / 1000).toFixed(1)}<span style={{ fontSize: '13px', fontWeight: 400, color: '#64748b' }}>k</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Cohort Tables */}
+          {regions?.map((region) => {
+            if (!region) return null;
+            const { currency, cohorts } = region;
+            if (!cohorts || cohorts.length === 0) return <div key={region.name} style={{ color: '#94a3b8' }}>No data for {region.name}</div>;
+            return (
+              <div key={region.name} style={{ marginBottom: '32px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                  <div style={{ fontSize: '18px', fontWeight: 700, color: '#f1f5f9' }}>{region.name} Revenue Realisation</div>
+                  <div style={{ fontSize: '11px', color: '#f1f5f9', backgroundColor: '#1e293b', border: '1px solid #334155', borderRadius: '6px', padding: '4px 10px' }}>{currency}</div>
+                </div>
+                <div style={{ overflowX: 'auto' }}>
+                  <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '11px' }}>
+                    <thead>
+                      <tr style={{ backgroundColor: '#1e3a5f' }}>
+                        <th style={{ padding: '8px 10px', textAlign: 'left', color: '#f1f5f9', fontWeight: 600, border: '1px solid #334155' }}>Cohort Month</th>
+                        <th style={{ padding: '8px 10px', textAlign: 'center', color: '#f1f5f9', fontWeight: 600, border: '1px solid #334155' }}>CW Value</th>
+                        <th style={{ padding: '8px 10px', textAlign: 'center', color: '#f1f5f9', fontWeight: 600, border: '1px solid #334155' }}>M0</th>
+                        <th style={{ padding: '8px 10px', textAlign: 'center', color: '#f1f5f9', fontWeight: 600, border: '1px solid #334155' }}>M1</th>
+                        <th style={{ padding: '8px 10px', textAlign: 'center', color: '#f1f5f9', fontWeight: 600, border: '1px solid #334155' }}>M2</th>
+                        <th style={{ padding: '8px 10px', textAlign: 'center', color: '#f1f5f9', fontWeight: 600, border: '1px solid #334155' }}>M3</th>
+                        <th style={{ padding: '8px 10px', textAlign: 'center', color: '#f1f5f9', fontWeight: 600, border: '1px solid #334155' }}>M4</th>
+                        <th style={{ padding: '8px 10px', textAlign: 'center', color: '#f1f5f9', fontWeight: 600, border: '1px solid #334155' }}>M5</th>
+                        <th style={{ padding: '8px 10px', textAlign: 'center', color: '#f1f5f9', fontWeight: 600, border: '1px solid #334155' }}>M6+</th>
+                        <th style={{ padding: '8px 10px', textAlign: 'center', color: '#f1f5f9', fontWeight: 600, border: '1px solid #334155' }}>Rev Realised</th>
+                        <th style={{ padding: '8px 10px', textAlign: 'center', color: '#f1f5f9', fontWeight: 600, border: '1px solid #334155' }}> %-age</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {cohorts.map((row, idx) => {
+                        const bg = idx % 2 === 0 ? '#1e293b' : '#162032';
+                        const milestones = ['m0', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6plus'];
+                        let cumulative = 0;
+                        const cumulativePcts = milestones.map((m) => {
+                          const val = row[m] ?? 0;
+                          cumulative += val;
+                          return row.cwValue > 0 ? (cumulative / row.cwValue) * 100 : 0;
+                        });
+                        return (
+                          <tr key={idx} style={{ backgroundColor: bg }}>
+                            <td style={{ padding: '6px 10px', color: '#f1f5f9', fontWeight: 600, border: '1px solid #334155', textAlign: 'left' }}>{row.month}</td>
+                            <td style={{ padding: '6px 10px', color: '#cbd5e1', border: '1px solid #334155', textAlign: 'center', fontWeight: 600 }}>{row.cwValue.toLocaleString()}</td>
+                            {milestones.map((m, mIdx) => (
+                              <td key={m} style={{ padding: '4px 6px', border: '1px solid #334155', textAlign: 'center', backgroundColor: bg }}>
+                                {row[m] !== null && row[m] !== undefined ? (
+                                  <div style={{ fontSize: '10px' }}>
+                                    <div style={{ color: '#f1f5f9', fontWeight: 600 }}>{row[m].toLocaleString()}</div>
+                                    <div style={{ color: '#94a3b8', fontSize: '9px', marginTop: '1px' }}>{cumulativePcts[mIdx].toFixed(1)}%</div>
+                                  </div>
+                                ) : (
+                                  <span style={{ color: '#475569' }}>—</span>
+                                )}
+                              </td>
+                            ))}
+                            <td style={{ padding: '6px 10px', color: '#cbd5e1', border: '1px solid #334155', textAlign: 'center', fontWeight: 600 }}>{row.revRealised.toLocaleString()}</td>
+                            <td style={{ padding: '6px 10px', color: '#cbd5e1', border: '1px solid #334155', textAlign: 'center', fontWeight: 600 }}>{(row.pctRealised * 100).toFixed(1)}%</td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      );
+    };
+
+    // ══════════════════════════════════════════════════════════════════
+    // OM PERFORMANCE SECTION
+    // ══════════════════════════════════════════════════════════════════
+    const OMSection = () => {
+      const [store, setStore] = useState(null);
+      const [loading, setLoading] = useState(true);
+
+      useEffect(() => {
+        loadJSON('om_performance.json').then((data) => {
+          setStore(data);
+          setLoading(false);
+        });
+      }, []);
+
+      if (loading) return <div style={{ color: '#94a3b8', padding: '40px', textAlign: 'center' }}>Loading OM Performance data…</div>;
+      if (!store) return <div style={{ color: '#ef4444', padding: '40px', textAlign: 'center' }}>Failed to load OM Performance data.</div>;
+
+      const { oms = [] } = store;
+
+      return (
+        <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ fontSize: '14px', fontWeight: 700, color: '#f1f5f9', marginBottom: '16px' }}>Top Performers</div>
+          <div style={{ overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '12px' }}>
+              <thead>
+                <tr style={{ backgroundColor: '#1e3a5f' }}>
+                  <th style={{ padding: '8px 10px', textAlign: 'left', color: '#f1f5f9', fontWeight: 600, border: '1px solid #334155' }}>OM Name</th>
+                  <th style={{ padding: '8px 10px', textAlign: 'center', color: '#f1f5f9', fontWeight: 600, border: '1px solid #334155' }}>Region</th>
+                  <th style={{ padding: '8px 10px', textAlign: 'center', color: '#f1f5f9', fontWeight: 600, border: '1px solid #334155' }}>Projects</th>
+                  <th style={{ padding: '8px 10px', textAlign: 'center', color: '#f1f5f9', fontWeight: 600, border: '1px solid #334155' }}>Live %</th>
+                  <th style={{ padding: '8px 10px', textAlign: 'center', color: '#f1f5f9', fontWeight: 600, border: '1px solid #334155' }}>Avg TTGL</th>
+                  <th style={{ padding: '8px 10px', textAlign: 'center', color: '#f1f5f9', fontWeight: 600, border: '1px solid #334155' }}>SLA %</th>
+                </tr>
+              </thead>
+              <tbody>
+                {oms.length > 0 ? oms.slice(0, 20).map((om, idx) => {
+                  const bg = idx % 2 === 0 ? '#1e293b' : '#162032';
+                  return (
+                    <tr key={idx} style={{ backgroundColor: bg }}>
+                      <td style={{ padding: '8px 10px', color: '#f1f5f9', fontWeight: 600, border: '1px solid #334155', textAlign: 'left' }}>{om.name}</td>
+                      <td style={{ padding: '8px 10px', color: '#94a3b8', border: '1px solid #334155', textAlign: 'center' }}>{om.regions?.[0] || '-'}</td>
+                      <td style={{ padding: '8px 10px', color: '#cbd5e1', border: '1px solid #334155', textAlign: 'center', fontWeight: 600 }}>{om.total}</td>
+                      <td style={{ padding: '8px 10px', color: '#f1f5f9', border: '1px solid #334155', textAlign: 'center', fontWeight: 600 }}>{(om.liveRate * 100).toFixed(1)}%</td>
+                      <td style={{ padding: '8px 10px', color: '#f1f5f9', border: '1px solid #334155', textAlign: 'center', fontWeight: 600 }}>{om.avgTTGL.toFixed(1)}d</td>
+                      <td style={{ padding: '8px 10px', color: '#f1f5f9', border: '1px solid #334155', textAlign: 'center', fontWeight: 600 }}>{(om.slaPct * 100).toFixed(1)}%</td>
+                    </tr>
+                  );
+                }) : (
+                  <tr>
+                    <td colSpan="6" style={{ padding: '20px', textAlign: 'center', color: '#94a3b8' }}>No OM data available</td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      );
+    };
+
+    // ══════════════════════════════════════════════════════════════════
+    // MAIN APP
+    // ══════════════════════════════════════════════════════════════════
+    const App = () => {
+      const [activeTab, setActiveTab] = useState('ttgl');
+
+      return (
+        <div style={{ backgroundColor: '#0f172a', minHeight: '100vh', color: '#f1f5f9' }}>
+          <div style={{ backgroundColor: '#1e293b', padding: '20px', borderBottom: '1px solid #334155' }}>
+            <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                <span style={{ fontSize: '24px' }}>🎯</span>
+                <h1 style={{ fontSize: '24px', fontWeight: 700, color: '#f1f5f9', margin: 0 }}>Global Onboarding Metrics</h1>
+              </div>
+              <div style={{ display: 'flex', gap: '8px' }}>
+                <button className="tab-button" style={{ backgroundColor: activeTab === 'ttgl' ? '#1e3a5f' : '#1e293b', color: activeTab === 'ttgl' ? '#ffffff' : '#94a3b8' }} onClick={() => setActiveTab('ttgl')}>
+                  📊 TTGL
+                </button>
+                <button className="tab-button" style={{ backgroundColor: activeTab === 'revrec' ? '#1e3a5f' : '#1e293b', color: activeTab === 'revrec' ? '#ffffff' : '#94a3b8' }} onClick={() => setActiveTab('revrec')}>
+                  💰 Revenue Realisation
+                </button>
+                <button className="tab-button" style={{ backgroundColor: activeTab === 'om' ? '#1e3a5f' : '#1e293b', color: activeTab === 'om' ? '#ffffff' : '#94a3b8' }} onClick={() => setActiveTab('om')}>
+                  👥 OM Performance
+                </button>
+              </div>
+            </div>
+          </div>
+          <div style={{ backgroundColor: '#0f172a' }}>
+            {activeTab === 'ttgl' && <TTGLSection />}
+            {activeTab === 'revrec' && <RevRecSection />}
+            {activeTab === 'om' && <OMSection />}
+          </div>
+        </div>
+      );
+    };
+
+    // ══════════════════════════════════════════════════════════════════
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
 </html>
