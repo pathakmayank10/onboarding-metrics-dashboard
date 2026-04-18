@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Onboarding Metrics Dashboard</title>
-  <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/chart.js@4.4.0/dist/chart.umd.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -14,8 +13,9 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       padding: 20px;
     }
-    #root { max-width: 1400px; margin: 0 auto; }
-    h1 { text-align: center; margin-bottom: 30px; font-size: 28px; }
+    #root { max-width: 1600px; margin: 0 auto; }
+    h1 { text-align: center; margin-bottom: 30px; font-size: 32px; }
+    h3 { font-size: 16px; margin-top: 20px; }
     .tabs {
       display: flex;
       justify-content: center;
@@ -30,7 +30,7 @@
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s;
-      font-size: 14px;
+      font-size: 16px;
     }
     button.active {
       background: #2563eb;
@@ -56,139 +56,248 @@
       border-radius: 4px;
       margin: -20px -20px 20px -20px;
       font-weight: 600;
-      font-size: 14px;
+      font-size: 16px;
     }
     table {
       width: 100%;
       border-collapse: collapse;
       font-size: 12px;
+      margin-bottom: 20px;
+      overflow-x: auto;
     }
     th {
       background: #1e3a5f;
       color: white;
-      padding: 8px;
-      text-align: center;
+      padding: 10px;
+      text-align: left;
       border: 1px solid #334155;
       font-weight: 600;
+      font-size: 11px;
     }
     td {
       background: #162032;
       border: 1px solid #334155;
-      padding: 8px;
-      text-align: center;
+      padding: 8px 10px;
+      text-align: left;
+      font-size: 11px;
     }
     tr:hover td { background: #1e293b; }
+    .region-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .region-card {
+      background: #162032;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      padding: 15px;
+      text-align: center;
+    }
+    .region-name { font-weight: 600; font-size: 14px; margin-bottom: 5px; }
+    .region-value { font-size: 18px; font-weight: 700; color: #60a5fa; }
+    .region-label { font-size: 10px; color: #94a3b8; margin-top: 5px; }
     .loading { text-align: center; padding: 40px; color: #94a3b8; }
-    .error { color: #fca5a5; padding: 20px; background: #450a0a; border-radius: 4px; }
+    .error { text-align: center; padding: 40px; color: #ef4444; }
+    .hidden { display: none; }
   </style>
 </head>
 <body>
   <div id="root"></div>
 
   <script>
-    const { useState, useEffect, useRef } = React;
-    const e = React.createElement;
+    let ttglData = null;
+    let revrecData = null;
+    let omData = null;
+    let currentTab = 'ttgl';
 
-    function TTGLSection() {
-      const [data, setData] = useState(null);
-      const [loading, setLoading] = useState(true);
-
-      useEffect(() => {
-        fetch('./ttgl_data.json')
-          .then(r => r.json())
-          .then(d => { console.log('TTGL data loaded:', d); setData(d); setLoading(false); })
-          .catch(err => { console.error('TTGL error:', err); setLoading(false); });
-      }, []);
-
-      if (loading) return e('div', { className: 'loading' }, 'Loading TTGL...');
-      if (!data) return e('div', { className: 'error' }, 'Failed to load TTGL data');
-
-      return e('div', null,
-        e('div', { className: 'card' },
-          e('div', { className: 'card-header' }, '📊 TTGL Data'),
-          data.months ? e('div', null,
-            'Months: ' + data.months.join(', ')
-          ) : 'No months data'
-        )
-      );
+    // Load all data files
+    async function loadData() {
+      try {
+        const [ttgl, revrec, om] = await Promise.all([
+          fetch('./ttgl_data.json').then(r => r.json()),
+          fetch('./revrec_data.json').then(r => r.json()),
+          fetch('./om_performance.json').then(r => r.json())
+        ]);
+        ttglData = ttgl;
+        revrecData = revrec;
+        omData = om;
+        console.log('All data loaded:', { ttglData, revrecData, omData });
+        render();
+      } catch (err) {
+        console.error('Data loading error:', err);
+        document.getElementById('root').innerHTML = '<div class="error">Failed to load data: ' + err.message + '</div>';
+      }
     }
 
-    function RevRecSection() {
-      const [data, setData] = useState(null);
-      const [loading, setLoading] = useState(true);
-
-      useEffect(() => {
-        fetch('./revrec_data.json')
-          .then(r => r.json())
-          .then(d => { console.log('RevRec data loaded:', d); setData(d); setLoading(false); })
-          .catch(err => { console.error('RevRec error:', err); setLoading(false); });
-      }, []);
-
-      if (loading) return e('div', { className: 'loading' }, 'Loading RevRec...');
-      if (!data) return e('div', { className: 'error' }, 'Failed to load RevRec data');
-
-      return e('div', null,
-        e('div', { className: 'card' },
-          e('div', { className: 'card-header' }, '💰 Revenue Realisation'),
-          data.regions ? e('div', null,
-            'Regions: ' + data.regions.map(r => r.name).join(', ')
-          ) : 'No regions data'
-        )
-      );
-    }
-
-    function OMSection() {
-      const [data, setData] = useState(null);
-      const [loading, setLoading] = useState(true);
-
-      useEffect(() => {
-        fetch('./om_performance.json')
-          .then(r => r.json())
-          .then(d => { console.log('OM data loaded:', d); setData(d); setLoading(false); })
-          .catch(err => { console.error('OM error:', err); setLoading(false); });
-      }, []);
-
-      if (loading) return e('div', { className: 'loading' }, 'Loading OM...');
-      if (!data) return e('div', { className: 'error' }, 'Failed to load OM data');
-
-      return e('div', null,
-        e('div', { className: 'card' },
-          e('div', { className: 'card-header' }, '👥 OM Performance'),
-          data.oms ? e('div', null,
-            'OMs: ' + data.oms.length
-          ) : 'No OMs data'
-        )
-      );
-    }
-
-    function App() {
-      const [tab, setTab] = useState('ttgl');
+    function renderTTGL() {
+      if (!ttglData) return '<div class="loading">Loading TTGL...</div>';
       
-      return e('div', null,
-        e('h1', null, '🌍 Onboarding Metrics Dashboard'),
-        e('div', { className: 'tabs' },
-          e('button', { className: tab === 'ttgl' ? 'active' : 'inactive', onClick: () => setTab('ttgl') }, '📊 TTGL'),
-          e('button', { className: tab === 'revrec' ? 'active' : 'inactive', onClick: () => setTab('revrec') }, '💰 RevRec'),
-          e('button', { className: tab === 'om' ? 'active' : 'inactive', onClick: () => setTab('om') }, '👥 OM')
-        ),
-        e('div', null,
-          tab === 'ttgl' && e(TTGLSection),
-          tab === 'revrec' && e(RevRecSection),
-          tab === 'om' && e(OMSection)
-        )
-      );
+      let html = '<div class="card">';
+      html += '<div class="card-header">📊 TTGL Overview</div>';
+      
+      // Region summary cards
+      if (ttglData.regionSummary) {
+        html += '<div class="region-cards">';
+        ttglData.regionSummary.forEach(r => {
+          html += `<div class="region-card">
+            <div class="region-name">${r.region}</div>
+            <div class="region-value">${r.avgTTGL.toFixed(1)}d</div>
+            <div class="region-label">Avg TTGL (${r.count} closed)</div>
+          </div>`;
+        });
+        html += '</div>';
+      }
+      
+      // TTGL Table
+      if (ttglData.ttglByMonth) {
+        html += '<table><thead><tr><th>Region</th><th>Month</th><th>Avg TTGL</th><th>Count</th></tr></thead><tbody>';
+        ttglData.ttglByMonth.forEach(row => {
+          html += `<tr><td>${row.region}</td><td>${row.month}</td><td>${row.avgTTGL.toFixed(1)}</td><td>${row.count}</td></tr>`;
+        });
+        html += '</tbody></table>';
+      }
+      
+      html += '</div>';
+      return html;
     }
 
-    // Render the app
-    try {
-      const container = document.getElementById('root');
-      const root = ReactDOM.createRoot(container);
-      root.render(e(App));
-      console.log('App rendered successfully');
-    } catch (err) {
-      console.error('Render error:', err);
-      document.getElementById('root').innerHTML = '<div class="error">Failed to initialize app: ' + err.message + '</div>';
+    function renderRevRec() {
+      if (!revrecData) return '<div class="loading">Loading Revenue Realisation...</div>';
+      
+      let html = '<div class="card">';
+      html += '<div class="card-header">💰 Revenue Realisation</div>';
+      
+      // Pending MRR cards
+      if (revrecData.regions) {
+        html += '<div class="region-cards">';
+        revrecData.regions.forEach(r => {
+          const pendingMRR = r.openPendingMRR || 0;
+          html += `<div class="region-card">
+            <div class="region-name">${r.name}</div>
+            <div class="region-value">$${pendingMRR.toLocaleString()}</div>
+            <div class="region-label">Pending MRR (Open)</div>
+          </div>`;
+        });
+        html += '</div>';
+      }
+      
+      // Cohort Tables for each region
+      if (revrecData.regions) {
+        revrecData.regions.forEach(region => {
+          html += `<div style="margin-top: 30px;">
+            <h3 style="background: #1e3a5f; padding: 10px; margin-bottom: 10px; border-radius: 4px;">${region.name} - Cohorts</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Cohort</th>
+                  <th>CW Value</th>
+                  <th>M0</th>
+                  <th>M1</th>
+                  <th>M2</th>
+                  <th>M3</th>
+                  <th>M4</th>
+                  <th>M5</th>
+                  <th>M6+</th>
+                  <th>Rev Realised</th>
+                  <th>%-age</th>
+                </tr>
+              </thead>
+              <tbody>`;
+          
+          if (region.cohorts) {
+            region.cohorts.forEach(cohort => {
+              html += `<tr>
+                <td>${cohort.month}</td>
+                <td>$${cohort.cwValue.toFixed(0)}</td>
+                <td>${cohort.m0 ? '$' + cohort.m0.toFixed(0) : '-'}</td>
+                <td>${cohort.m1 ? '$' + cohort.m1.toFixed(0) : '-'}</td>
+                <td>${cohort.m2 ? '$' + cohort.m2.toFixed(0) : '-'}</td>
+                <td>${cohort.m3 ? '$' + cohort.m3.toFixed(0) : '-'}</td>
+                <td>${cohort.m4 ? '$' + cohort.m4.toFixed(0) : '-'}</td>
+                <td>${cohort.m5 ? '$' + cohort.m5.toFixed(0) : '-'}</td>
+                <td>${cohort.m6plus ? '$' + cohort.m6plus.toFixed(0) : '-'}</td>
+                <td>$${cohort.revRealised.toFixed(0)}</td>
+                <td>${(cohort.revRealised / cohort.cwValue * 100).toFixed(1)}%</td>
+              </tr>`;
+            });
+          }
+          
+          html += '</tbody></table></div>';
+        });
+      }
+      
+      html += '</div>';
+      return html;
     }
+
+    function renderOM() {
+      if (!omData) return '<div class="loading">Loading OM Performance...</div>';
+      
+      let html = '<div class="card">';
+      html += '<div class="card-header">👥 OM Performance</div>';
+      
+      // Summary stats
+      if (omData.summary) {
+        html += '<div class="region-cards">';
+        html += `<div class="region-card">
+          <div class="region-name">Total OMs</div>
+          <div class="region-value">${omData.summary.totalOMs}</div>
+        </div>`;
+        html += `<div class="region-card">
+          <div class="region-name">Total Projects</div>
+          <div class="region-value">${omData.summary.totalProjects}</div>
+        </div>`;
+        html += `<div class="region-card">
+          <div class="region-name">Avg TTGL</div>
+          <div class="region-value">${omData.summary.avgTTGL.toFixed(1)}d</div>
+        </div>`;
+        html += '</div>';
+      }
+      
+      // OM Leaderboard
+      if (omData.oms && omData.oms.length > 0) {
+        html += '<table><thead><tr><th>OM Name</th><th>Region</th><th>Projects</th><th>Live</th><th>SLA %</th><th>Avg TTGL</th></tr></thead><tbody>';
+        omData.oms.slice(0, 20).forEach(om => {
+          html += `<tr>
+            <td>${om.name}</td>
+            <td>${om.region}</td>
+            <td>${om.totalProjects}</td>
+            <td>${om.liveCount}</td>
+            <td>${om.slaPercent ? om.slaPercent.toFixed(1) + '%' : '-'}</td>
+            <td>${om.avgTTGL ? om.avgTTGL.toFixed(1) + 'd' : '-'}</td>
+          </tr>`;
+        });
+        html += '</tbody></table>';
+      }
+      
+      html += '</div>';
+      return html;
+    }
+
+    function setTab(tab) {
+      currentTab = tab;
+      render();
+    }
+
+    function render() {
+      let content = '<h1>🌍 Onboarding Metrics Dashboard</h1>';
+      content += '<div class="tabs">';
+      content += `<button class="${currentTab === 'ttgl' ? 'active' : 'inactive'}" onclick="setTab('ttgl')">📊 TTGL</button>`;
+      content += `<button class="${currentTab === 'revrec' ? 'active' : 'inactive'}" onclick="setTab('revrec')">💰 RevRec</button>`;
+      content += `<button class="${currentTab === 'om' ? 'active' : 'inactive'}" onclick="setTab('om')">👥 OM</button>`;
+      content += '</div>';
+      
+      if (currentTab === 'ttgl') content += renderTTGL();
+      else if (currentTab === 'revrec') content += renderRevRec();
+      else if (currentTab === 'om') content += renderOM();
+      
+      document.getElementById('root').innerHTML = content;
+    }
+
+    // Start the app
+    loadData();
   </script>
 </body>
 </html>
