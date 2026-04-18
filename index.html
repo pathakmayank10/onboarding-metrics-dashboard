@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Onboarding Metrics Dashboard</title>
-  <script src="https://unpkg.com/chart.js@4.4.0/dist/chart.umd.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -15,7 +14,7 @@
     }
     #root { max-width: 1600px; margin: 0 auto; }
     h1 { text-align: center; margin-bottom: 30px; font-size: 32px; }
-    h3 { font-size: 16px; margin-top: 20px; }
+    h3 { font-size: 14px; margin-top: 20px; margin-bottom: 10px; color: #e2e8f0; }
     .tabs {
       display: flex;
       justify-content: center;
@@ -24,24 +23,19 @@
       flex-wrap: wrap;
     }
     button {
-      padding: 12px 24px;
+      padding: 10px 20px;
       border: none;
       border-radius: 6px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s;
-      font-size: 16px;
+      font-size: 14px;
     }
-    button.active {
-      background: #2563eb;
-      color: white;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
-    }
-    button.inactive {
-      background: #475569;
-      color: #cbd5e1;
-    }
+    button.active { background: #2563eb; color: white; }
+    button.inactive { background: #475569; color: #cbd5e1; }
     button:hover { opacity: 0.9; }
+    .content { display: none; }
+    .content.active { display: block; }
     .card {
       background: #0f172a;
       border: 1px solid #334155;
@@ -52,277 +46,259 @@
     .card-header {
       background: #1e3a5f;
       color: white;
-      padding: 12px 16px;
+      padding: 10px 16px;
       border-radius: 4px;
-      margin: -20px -20px 20px -20px;
+      margin: -20px -20px 15px -20px;
       font-weight: 600;
-      font-size: 16px;
+      font-size: 14px;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 12px;
+      font-size: 11px;
       margin-bottom: 20px;
-      overflow-x: auto;
     }
     th {
       background: #1e3a5f;
       color: white;
-      padding: 10px;
+      padding: 8px;
       text-align: left;
       border: 1px solid #334155;
       font-weight: 600;
-      font-size: 11px;
     }
     td {
       background: #162032;
       border: 1px solid #334155;
-      padding: 8px 10px;
+      padding: 6px 8px;
       text-align: left;
-      font-size: 11px;
     }
     tr:hover td { background: #1e293b; }
-    .region-cards {
+    .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 15px;
       margin-bottom: 20px;
     }
-    .region-card {
+    .info-card {
       background: #162032;
       border: 1px solid #334155;
       border-radius: 6px;
-      padding: 15px;
+      padding: 12px;
       text-align: center;
     }
-    .region-name { font-weight: 600; font-size: 14px; margin-bottom: 5px; }
-    .region-value { font-size: 18px; font-weight: 700; color: #60a5fa; }
-    .region-label { font-size: 10px; color: #94a3b8; margin-top: 5px; }
-    .loading { text-align: center; padding: 40px; color: #94a3b8; }
-    .error { text-align: center; padding: 40px; color: #ef4444; }
-    .hidden { display: none; }
+    .info-card-value { font-size: 20px; font-weight: 700; color: #60a5fa; margin: 8px 0; }
+    .info-card-label { font-size: 10px; color: #94a3b8; }
+    .error { color: #ef4444; padding: 20px; text-align: center; }
   </style>
 </head>
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <h1>🌍 Onboarding Metrics Dashboard</h1>
+    <div class="tabs">
+      <button class="active" onclick="switchTab('ttgl')">📊 TTGL</button>
+      <button class="inactive" onclick="switchTab('revrec')">💰 RevRec</button>
+      <button class="inactive" onclick="switchTab('om')">👥 OM</button>
+    </div>
+    <div id="ttgl" class="content active"></div>
+    <div id="revrec" class="content"></div>
+    <div id="om" class="content"></div>
+  </div>
 
   <script>
-    let ttglData = null;
-    let revrecData = null;
-    let omData = null;
-    let currentTab = 'ttgl';
-
-    // Load all data files
-    async function loadData() {
+    async function init() {
       try {
         const [ttgl, revrec, om] = await Promise.all([
           fetch('./ttgl_data.json').then(r => r.json()),
           fetch('./revrec_data.json').then(r => r.json()),
           fetch('./om_performance.json').then(r => r.json())
         ]);
-        ttglData = ttgl;
-        revrecData = revrec;
-        omData = om;
-        console.log('All data loaded:', { ttglData, revrecData, omData });
-        render();
+        
+        console.log('Data loaded successfully');
+        renderTTGL(ttgl);
+        renderRevRec(revrec);
+        renderOM(om);
       } catch (err) {
-        console.error('Data loading error:', err);
+        console.error('Load error:', err);
         document.getElementById('root').innerHTML = '<div class="error">Failed to load data: ' + err.message + '</div>';
       }
     }
 
-    function renderTTGL() {
-      if (!ttglData) return '<div class="loading">Loading TTGL...</div>';
-      
-      let html = '<div class="card">';
-      html += '<div class="card-header">📊 TTGL Overview</div>';
+    function renderTTGL(data) {
+      if (!data || !data.ttglData) {
+        document.getElementById('ttgl').innerHTML = '<div class="error">No TTGL data</div>';
+        return;
+      }
+
+      let html = '<div class="card"><div class="card-header">📊 TTGL by Region</div>';
       
       // Region summary cards
-      if (ttglData.ttglData && Array.isArray(ttglData.ttglData)) {
-        html += '<div class="region-cards">';
-        ttglData.ttglData.forEach(r => {
-          const values = Object.values(r.months || {});
-          const avg = values.length > 0 ? (values.reduce((a, b) => a + b, 0) / values.length) : 0;
-          html += `<div class="region-card">
-            <div class="region-name">${r.region}</div>
-            <div class="region-value">${avg.toFixed(1)}d</div>
-            <div class="region-label">Avg TTGL</div>
-          </div>`;
-        });
-        html += '</div>';
-      }
-      
-      // TTGL Table by Region and Month
-      if (ttglData.ttglData && Array.isArray(ttglData.ttglData)) {
-        html += '<table style="margin-top: 20px;"><thead><tr><th>Region</th>';
-        if (ttglData.months) {
-          ttglData.months.forEach(m => html += `<th>${m}</th>`);
-        }
-        html += '</tr></thead><tbody>';
-        
-        ttglData.ttglData.forEach(r => {
-          html += `<tr><td><strong>${r.region}</strong></td>`;
-          if (ttglData.months) {
-            ttglData.months.forEach(m => {
-              const val = r.months && r.months[m] ? r.months[m].toFixed(1) : '-';
-              html += `<td>${val}</td>`;
-            });
-          }
-          html += '</tr>';
-        });
-        html += '</tbody></table>';
-      }
-      
+      html += '<div class="cards-grid">';
+      data.ttglData.forEach(r => {
+        const values = Object.values(r.months || {});
+        const avg = values.length > 0 ? (values.reduce((a, b) => a + b, 0) / values.length) : 0;
+        html += `<div class="info-card">
+          <div>${r.region}</div>
+          <div class="info-card-value">${avg.toFixed(1)}d</div>
+          <div class="info-card-label">Avg TTGL</div>
+        </div>`;
+      });
       html += '</div>';
-      return html;
+
+      // TTGL Table
+      html += '<h3>TTGL by Month</h3><table><thead><tr><th>Region</th>';
+      if (data.months) {
+        data.months.forEach(m => html += `<th>${m}</th>`);
+      }
+      html += '</tr></thead><tbody>';
+      
+      data.ttglData.forEach(r => {
+        html += `<tr><td><b>${r.region}</b></td>`;
+        if (data.months) {
+          data.months.forEach(m => {
+            const val = r.months && r.months[m] ? r.months[m].toFixed(1) : '-';
+            html += `<td>${val}</td>`;
+          });
+        }
+        html += '</tr>';
+      });
+      html += '</tbody></table></div>';
+      
+      document.getElementById('ttgl').innerHTML = html;
     }
 
-    function renderRevRec() {
-      if (!revrecData) return '<div class="loading">Loading Revenue Realisation...</div>';
-      
-      let html = '<div class="card">';
-      html += '<div class="card-header">💰 Revenue Realisation</div>';
+    function renderRevRec(data) {
+      if (!data || !data.regions) {
+        document.getElementById('revrec').innerHTML = '<div class="error">No RevRec data</div>';
+        return;
+      }
+
+      let html = '<div class="card"><div class="card-header">💰 Revenue Realisation</div>';
       
       // Pending MRR cards
-      if (revrecData.regions && Array.isArray(revrecData.regions)) {
-        html += '<div class="region-cards">';
-        revrecData.regions.forEach(r => {
-          const pendingObj = revrecData.openPendingMRR || {};
-          const pendingMRR = pendingObj[r.name] || 0;
-          html += `<div class="region-card">
-            <div class="region-name">${r.name}</div>
-            <div class="region-value">$${pendingMRR.toLocaleString()}</div>
-            <div class="region-label">Pending MRR (Open)</div>
-          </div>`;
-        });
-        html += '</div>';
-      }
-      
-      // Cohort Tables for each region
-      if (revrecData.regions && Array.isArray(revrecData.regions)) {
-        revrecData.regions.forEach(region => {
-          html += `<div style="margin-top: 30px;">
-            <h3 style="background: #1e3a5f; padding: 10px; margin-bottom: 10px; border-radius: 4px; color: white;">${region.name} - Revenue Realisation Cohorts</h3>
-            <table>
-              <thead>
-                <tr>
-                  <th>Cohort Month</th>
-                  <th>CW Value</th>
-                  <th>M0</th>
-                  <th>M1</th>
-                  <th>M2</th>
-                  <th>M3</th>
-                  <th>M4</th>
-                  <th>M5</th>
-                  <th>M6+</th>
-                  <th>Rev Realised</th>
-                  <th>%-age</th>
-                </tr>
-              </thead>
-              <tbody>`;
-          
-          if (region.cohorts && Array.isArray(region.cohorts)) {
-            region.cohorts.forEach(cohort => {
-              const pctRealised = cohort.cwValue > 0 ? ((cohort.revRealised / cohort.cwValue) * 100) : 0;
-              html += `<tr>
-                <td>${cohort.month}</td>
-                <td>$${Math.round(cohort.cwValue)}</td>
-                <td>${cohort.m0 ? '$' + Math.round(cohort.m0) : '-'}</td>
-                <td>${cohort.m1 ? '$' + Math.round(cohort.m1) : '-'}</td>
-                <td>${cohort.m2 ? '$' + Math.round(cohort.m2) : '-'}</td>
-                <td>${cohort.m3 ? '$' + Math.round(cohort.m3) : '-'}</td>
-                <td>${cohort.m4 ? '$' + Math.round(cohort.m4) : '-'}</td>
-                <td>${cohort.m5 ? '$' + Math.round(cohort.m5) : '-'}</td>
-                <td>${cohort.m6plus ? '$' + Math.round(cohort.m6plus) : '-'}</td>
-                <td>$${Math.round(cohort.revRealised)}</td>
-                <td>${pctRealised.toFixed(1)}%</td>
-              </tr>`;
-            });
-          }
-          
-          html += '</tbody></table></div>';
-        });
-      }
-      
+      html += '<div class="cards-grid">';
+      data.regions.forEach(r => {
+        const pendingObj = data.openPendingMRR || {};
+        const pendingMRR = pendingObj[r.name] || 0;
+        html += `<div class="info-card">
+          <div>${r.name}</div>
+          <div class="info-card-value">$${pendingMRR.toLocaleString()}</div>
+          <div class="info-card-label">Pending MRR</div>
+        </div>`;
+      });
       html += '</div>';
-      return html;
-    }
 
-    function renderOM() {
-      if (!omData) return '<div class="loading">Loading OM Performance...</div>';
-      
-      let html = '<div class="card">';
-      html += '<div class="card-header">👥 OM Performance Leaderboard</div>';
-      
-      // Summary stats
-      if (omData.summary) {
-        html += '<div class="region-cards">';
-        html += `<div class="region-card">
-          <div class="region-name">Total OMs</div>
-          <div class="region-value">${omData.summary.totalOMs || 0}</div>
-        </div>`;
-        html += `<div class="region-card">
-          <div class="region-name">Total Projects</div>
-          <div class="region-value">${omData.summary.totalProjects || 0}</div>
-        </div>`;
-        html += `<div class="region-card">
-          <div class="region-name">Avg TTGL</div>
-          <div class="region-value">${(omData.summary.avgTTGL || 0).toFixed(1)}d</div>
-        </div>`;
-        html += `<div class="region-card">
-          <div class="region-name">Overall SLA %</div>
-          <div class="region-value">${((omData.summary.slaPct || 0) * 100).toFixed(1)}%</div>
-        </div>`;
-        html += '</div>';
-      }
-      
-      // OM Leaderboard
-      if (omData.oms && Array.isArray(omData.oms) && omData.oms.length > 0) {
-        html += '<table style="margin-top: 20px;"><thead><tr><th>OM Name</th><th>Region(s)</th><th>Total</th><th>Live</th><th>Drop</th><th>SLA %</th><th>Avg TTGL</th><th>MRR Live</th></tr></thead><tbody>';
-        omData.oms.slice(0, 30).forEach(om => {
-          const regions = Array.isArray(om.regions) ? om.regions.join(', ') : om.regions || '-';
-          const slaDisplay = om.slaPct !== null && om.slaPct !== undefined ? (om.slaPct * 100).toFixed(1) + '%' : '-';
-          const ttglDisplay = om.avgTTGL !== null && om.avgTTGL !== undefined ? om.avgTTGL.toFixed(1) + 'd' : '-';
-          html += `<tr>
-            <td>${om.name}</td>
-            <td>${regions}</td>
-            <td>${om.total || 0}</td>
-            <td>${om.live || 0}</td>
-            <td>${om.drop || 0}</td>
-            <td>${slaDisplay}</td>
-            <td>${ttglDisplay}</td>
-            <td>$${(om.mrrRealised || 0).toLocaleString()}</td>
-          </tr>`;
-        });
+      // Cohort tables
+      data.regions.forEach(region => {
+        html += `<h3>${region.name} Cohorts</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Month</th>
+                <th>CW</th>
+                <th>M0</th>
+                <th>M1</th>
+                <th>M2</th>
+                <th>M3</th>
+                <th>M4</th>
+                <th>M5</th>
+                <th>M6+</th>
+                <th>Realised</th>
+                <th>%</th>
+              </tr>
+            </thead>
+            <tbody>`;
+        
+        if (region.cohorts) {
+          region.cohorts.forEach(c => {
+            const pct = c.cwValue > 0 ? ((c.revRealised / c.cwValue) * 100).toFixed(1) : 0;
+            html += `<tr>
+              <td>${c.month}</td>
+              <td>$${Math.round(c.cwValue)}</td>
+              <td>${c.m0 ? '$' + Math.round(c.m0) : '-'}</td>
+              <td>${c.m1 ? '$' + Math.round(c.m1) : '-'}</td>
+              <td>${c.m2 ? '$' + Math.round(c.m2) : '-'}</td>
+              <td>${c.m3 ? '$' + Math.round(c.m3) : '-'}</td>
+              <td>${c.m4 ? '$' + Math.round(c.m4) : '-'}</td>
+              <td>${c.m5 ? '$' + Math.round(c.m5) : '-'}</td>
+              <td>${c.m6plus ? '$' + Math.round(c.m6plus) : '-'}</td>
+              <td>$${Math.round(c.revRealised)}</td>
+              <td>${pct}%</td>
+            </tr>`;
+          });
+        }
         html += '</tbody></table>';
-      }
+      });
       
       html += '</div>';
-      return html;
+      document.getElementById('revrec').innerHTML = html;
     }
 
-    function setTab(tab) {
-      currentTab = tab;
-      render();
-    }
+    function renderOM(data) {
+      if (!data || !data.oms) {
+        document.getElementById('om').innerHTML = '<div class="error">No OM data</div>';
+        return;
+      }
 
-    function render() {
-      let content = '<h1>🌍 Onboarding Metrics Dashboard</h1>';
-      content += '<div class="tabs">';
-      content += `<button class="${currentTab === 'ttgl' ? 'active' : 'inactive'}" onclick="setTab('ttgl')">📊 TTGL</button>`;
-      content += `<button class="${currentTab === 'revrec' ? 'active' : 'inactive'}" onclick="setTab('revrec')">💰 RevRec</button>`;
-      content += `<button class="${currentTab === 'om' ? 'active' : 'inactive'}" onclick="setTab('om')">👥 OM</button>`;
-      content += '</div>';
+      let html = '<div class="card"><div class="card-header">👥 OM Performance</div>';
       
-      if (currentTab === 'ttgl') content += renderTTGL();
-      else if (currentTab === 'revrec') content += renderRevRec();
-      else if (currentTab === 'om') content += renderOM();
+      // Summary cards
+      if (data.summary) {
+        html += '<div class="cards-grid">';
+        html += `<div class="info-card">
+          <div>Total OMs</div>
+          <div class="info-card-value">${data.summary.totalOMs || 0}</div>
+        </div>`;
+        html += `<div class="info-card">
+          <div>Total Projects</div>
+          <div class="info-card-value">${data.summary.totalProjects || 0}</div>
+        </div>`;
+        html += `<div class="info-card">
+          <div>Avg TTGL</div>
+          <div class="info-card-value">${(data.summary.avgTTGL || 0).toFixed(1)}d</div>
+        </div>`;
+        html += '</div>';
+      }
+
+      // Leaderboard
+      html += '<h3>OM Leaderboard (Top 30)</h3>';
+      html += '<table><thead><tr><th>Name</th><th>Region</th><th>Total</th><th>Live</th><th>Drop</th><th>SLA %</th><th>TTGL</th><th>MRR $</th></tr></thead><tbody>';
       
-      document.getElementById('root').innerHTML = content;
+      data.oms.slice(0, 30).forEach(om => {
+        const regions = Array.isArray(om.regions) ? om.regions.join(', ') : om.regions || '-';
+        const sla = om.slaPct !== null && om.slaPct !== undefined ? (om.slaPct * 100).toFixed(1) : '-';
+        const ttgl = om.avgTTGL !== null && om.avgTTGL !== undefined ? om.avgTTGL.toFixed(1) + 'd' : '-';
+        html += `<tr>
+          <td>${om.name}</td>
+          <td>${regions}</td>
+          <td>${om.total || 0}</td>
+          <td>${om.live || 0}</td>
+          <td>${om.drop || 0}</td>
+          <td>${sla}</td>
+          <td>${ttgl}</td>
+          <td>$${(om.mrrRealised || 0).toLocaleString()}</td>
+        </tr>`;
+      });
+      
+      html += '</tbody></table></div>';
+      document.getElementById('om').innerHTML = html;
     }
 
-    // Start the app
-    loadData();
+    function switchTab(tab) {
+      document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+      document.getElementById(tab).classList.add('active');
+      
+      document.querySelectorAll('button').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('button').forEach((el, i) => {
+        if ((i === 0 && tab === 'ttgl') || (i === 1 && tab === 'revrec') || (i === 2 && tab === 'om')) {
+          el.classList.add('active');
+        } else {
+          el.classList.add('inactive');
+        }
+      });
+    }
+
+    // Start
+    init();
   </script>
 </body>
 </html>
