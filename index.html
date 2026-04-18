@@ -138,23 +138,37 @@
       html += '<div class="card-header">📊 TTGL Overview</div>';
       
       // Region summary cards
-      if (ttglData.regionSummary) {
+      if (ttglData.ttglData && Array.isArray(ttglData.ttglData)) {
         html += '<div class="region-cards">';
-        ttglData.regionSummary.forEach(r => {
+        ttglData.ttglData.forEach(r => {
+          const values = Object.values(r.months || {});
+          const avg = values.length > 0 ? (values.reduce((a, b) => a + b, 0) / values.length) : 0;
           html += `<div class="region-card">
             <div class="region-name">${r.region}</div>
-            <div class="region-value">${r.avgTTGL.toFixed(1)}d</div>
-            <div class="region-label">Avg TTGL (${r.count} closed)</div>
+            <div class="region-value">${avg.toFixed(1)}d</div>
+            <div class="region-label">Avg TTGL</div>
           </div>`;
         });
         html += '</div>';
       }
       
-      // TTGL Table
-      if (ttglData.ttglByMonth) {
-        html += '<table><thead><tr><th>Region</th><th>Month</th><th>Avg TTGL</th><th>Count</th></tr></thead><tbody>';
-        ttglData.ttglByMonth.forEach(row => {
-          html += `<tr><td>${row.region}</td><td>${row.month}</td><td>${row.avgTTGL.toFixed(1)}</td><td>${row.count}</td></tr>`;
+      // TTGL Table by Region and Month
+      if (ttglData.ttglData && Array.isArray(ttglData.ttglData)) {
+        html += '<table style="margin-top: 20px;"><thead><tr><th>Region</th>';
+        if (ttglData.months) {
+          ttglData.months.forEach(m => html += `<th>${m}</th>`);
+        }
+        html += '</tr></thead><tbody>';
+        
+        ttglData.ttglData.forEach(r => {
+          html += `<tr><td><strong>${r.region}</strong></td>`;
+          if (ttglData.months) {
+            ttglData.months.forEach(m => {
+              const val = r.months && r.months[m] ? r.months[m].toFixed(1) : '-';
+              html += `<td>${val}</td>`;
+            });
+          }
+          html += '</tr>';
         });
         html += '</tbody></table>';
       }
@@ -170,10 +184,11 @@
       html += '<div class="card-header">💰 Revenue Realisation</div>';
       
       // Pending MRR cards
-      if (revrecData.regions) {
+      if (revrecData.regions && Array.isArray(revrecData.regions)) {
         html += '<div class="region-cards">';
         revrecData.regions.forEach(r => {
-          const pendingMRR = r.openPendingMRR || 0;
+          const pendingObj = revrecData.openPendingMRR || {};
+          const pendingMRR = pendingObj[r.name] || 0;
           html += `<div class="region-card">
             <div class="region-name">${r.name}</div>
             <div class="region-value">$${pendingMRR.toLocaleString()}</div>
@@ -184,14 +199,14 @@
       }
       
       // Cohort Tables for each region
-      if (revrecData.regions) {
+      if (revrecData.regions && Array.isArray(revrecData.regions)) {
         revrecData.regions.forEach(region => {
           html += `<div style="margin-top: 30px;">
-            <h3 style="background: #1e3a5f; padding: 10px; margin-bottom: 10px; border-radius: 4px;">${region.name} - Cohorts</h3>
+            <h3 style="background: #1e3a5f; padding: 10px; margin-bottom: 10px; border-radius: 4px; color: white;">${region.name} - Revenue Realisation Cohorts</h3>
             <table>
               <thead>
                 <tr>
-                  <th>Cohort</th>
+                  <th>Cohort Month</th>
                   <th>CW Value</th>
                   <th>M0</th>
                   <th>M1</th>
@@ -206,20 +221,21 @@
               </thead>
               <tbody>`;
           
-          if (region.cohorts) {
+          if (region.cohorts && Array.isArray(region.cohorts)) {
             region.cohorts.forEach(cohort => {
+              const pctRealised = cohort.cwValue > 0 ? ((cohort.revRealised / cohort.cwValue) * 100) : 0;
               html += `<tr>
                 <td>${cohort.month}</td>
-                <td>$${cohort.cwValue.toFixed(0)}</td>
-                <td>${cohort.m0 ? '$' + cohort.m0.toFixed(0) : '-'}</td>
-                <td>${cohort.m1 ? '$' + cohort.m1.toFixed(0) : '-'}</td>
-                <td>${cohort.m2 ? '$' + cohort.m2.toFixed(0) : '-'}</td>
-                <td>${cohort.m3 ? '$' + cohort.m3.toFixed(0) : '-'}</td>
-                <td>${cohort.m4 ? '$' + cohort.m4.toFixed(0) : '-'}</td>
-                <td>${cohort.m5 ? '$' + cohort.m5.toFixed(0) : '-'}</td>
-                <td>${cohort.m6plus ? '$' + cohort.m6plus.toFixed(0) : '-'}</td>
-                <td>$${cohort.revRealised.toFixed(0)}</td>
-                <td>${(cohort.revRealised / cohort.cwValue * 100).toFixed(1)}%</td>
+                <td>$${Math.round(cohort.cwValue)}</td>
+                <td>${cohort.m0 ? '$' + Math.round(cohort.m0) : '-'}</td>
+                <td>${cohort.m1 ? '$' + Math.round(cohort.m1) : '-'}</td>
+                <td>${cohort.m2 ? '$' + Math.round(cohort.m2) : '-'}</td>
+                <td>${cohort.m3 ? '$' + Math.round(cohort.m3) : '-'}</td>
+                <td>${cohort.m4 ? '$' + Math.round(cohort.m4) : '-'}</td>
+                <td>${cohort.m5 ? '$' + Math.round(cohort.m5) : '-'}</td>
+                <td>${cohort.m6plus ? '$' + Math.round(cohort.m6plus) : '-'}</td>
+                <td>$${Math.round(cohort.revRealised)}</td>
+                <td>${pctRealised.toFixed(1)}%</td>
               </tr>`;
             });
           }
@@ -236,37 +252,46 @@
       if (!omData) return '<div class="loading">Loading OM Performance...</div>';
       
       let html = '<div class="card">';
-      html += '<div class="card-header">👥 OM Performance</div>';
+      html += '<div class="card-header">👥 OM Performance Leaderboard</div>';
       
       // Summary stats
       if (omData.summary) {
         html += '<div class="region-cards">';
         html += `<div class="region-card">
           <div class="region-name">Total OMs</div>
-          <div class="region-value">${omData.summary.totalOMs}</div>
+          <div class="region-value">${omData.summary.totalOMs || 0}</div>
         </div>`;
         html += `<div class="region-card">
           <div class="region-name">Total Projects</div>
-          <div class="region-value">${omData.summary.totalProjects}</div>
+          <div class="region-value">${omData.summary.totalProjects || 0}</div>
         </div>`;
         html += `<div class="region-card">
           <div class="region-name">Avg TTGL</div>
-          <div class="region-value">${omData.summary.avgTTGL.toFixed(1)}d</div>
+          <div class="region-value">${(omData.summary.avgTTGL || 0).toFixed(1)}d</div>
+        </div>`;
+        html += `<div class="region-card">
+          <div class="region-name">Overall SLA %</div>
+          <div class="region-value">${((omData.summary.slaPct || 0) * 100).toFixed(1)}%</div>
         </div>`;
         html += '</div>';
       }
       
       // OM Leaderboard
-      if (omData.oms && omData.oms.length > 0) {
-        html += '<table><thead><tr><th>OM Name</th><th>Region</th><th>Projects</th><th>Live</th><th>SLA %</th><th>Avg TTGL</th></tr></thead><tbody>';
-        omData.oms.slice(0, 20).forEach(om => {
+      if (omData.oms && Array.isArray(omData.oms) && omData.oms.length > 0) {
+        html += '<table style="margin-top: 20px;"><thead><tr><th>OM Name</th><th>Region(s)</th><th>Total</th><th>Live</th><th>Drop</th><th>SLA %</th><th>Avg TTGL</th><th>MRR Live</th></tr></thead><tbody>';
+        omData.oms.slice(0, 30).forEach(om => {
+          const regions = Array.isArray(om.regions) ? om.regions.join(', ') : om.regions || '-';
+          const slaDisplay = om.slaPct !== null && om.slaPct !== undefined ? (om.slaPct * 100).toFixed(1) + '%' : '-';
+          const ttglDisplay = om.avgTTGL !== null && om.avgTTGL !== undefined ? om.avgTTGL.toFixed(1) + 'd' : '-';
           html += `<tr>
             <td>${om.name}</td>
-            <td>${om.region}</td>
-            <td>${om.totalProjects}</td>
-            <td>${om.liveCount}</td>
-            <td>${om.slaPercent ? om.slaPercent.toFixed(1) + '%' : '-'}</td>
-            <td>${om.avgTTGL ? om.avgTTGL.toFixed(1) + 'd' : '-'}</td>
+            <td>${regions}</td>
+            <td>${om.total || 0}</td>
+            <td>${om.live || 0}</td>
+            <td>${om.drop || 0}</td>
+            <td>${slaDisplay}</td>
+            <td>${ttglDisplay}</td>
+            <td>$${(om.mrrRealised || 0).toLocaleString()}</td>
           </tr>`;
         });
         html += '</tbody></table>';
