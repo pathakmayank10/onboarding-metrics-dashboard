@@ -31,7 +31,7 @@
         "Jan 2026": 14.9,
         "Feb 2026": 9.8,
         "Mar 2026": 7.0,
-        "Apr 2026": 4.8
+        "Apr 2026": 5.2
       }
     },
     {
@@ -45,7 +45,7 @@
         "Sep 2025": 32.5,
         "Oct 2025": 23.6,
         "Nov 2025": 28.7,
-        "Dec 2025": 29.8,
+        "Dec 2025": 32.0,
         "Jan 2026": 17.2,
         "Feb 2026": 11.6,
         "Mar 2026": 18.6,
@@ -105,7 +105,7 @@
         "Jan 2026": 39,
         "Feb 2026": 64,
         "Mar 2026": 35,
-        "Apr 2026": 9
+        "Apr 2026": 11
       }
     },
     {
@@ -119,11 +119,11 @@
         "Sep 2025": 61,
         "Oct 2025": 49,
         "Nov 2025": 51,
-        "Dec 2025": 44,
+        "Dec 2025": 45,
         "Jan 2026": 65,
         "Feb 2026": 76,
         "Mar 2026": 31,
-        "Apr 2026": 18
+        "Apr 2026": 19
       }
     },
     {
@@ -179,7 +179,7 @@
         "Jan 2026": 83.0,
         "Feb 2026": 62.8,
         "Mar 2026": 34.0,
-        "Apr 2026": 7.2
+        "Apr 2026": 6.8
       }
     },
     {
@@ -193,11 +193,11 @@
         "Sep 2025": null,
         "Oct 2025": 188.0,
         "Nov 2025": 164.5,
-        "Dec 2025": 126.5,
+        "Dec 2025": 126.4,
         "Jan 2026": 105.0,
         "Feb 2026": 62.1,
         "Mar 2026": 39.4,
-        "Apr 2026": 10.2
+        "Apr 2026": 9.8
       }
     },
     {
@@ -215,7 +215,7 @@
         "Jan 2026": 82.0,
         "Feb 2026": 64.5,
         "Mar 2026": 38.0,
-        "Apr 2026": 11.0
+        "Apr 2026": 5.5
       }
     },
     {
@@ -233,7 +233,7 @@
         "Jan 2026": 89.7,
         "Feb 2026": 61.5,
         "Mar 2026": 36.3,
-        "Apr 2026": 10.5
+        "Apr 2026": 9.9
       }
     }
   ],
@@ -253,7 +253,7 @@
         "Jan 2026": 1,
         "Feb 2026": 4,
         "Mar 2026": 3,
-        "Apr 2026": 18
+        "Apr 2026": 17
       }
     },
     {
@@ -267,11 +267,11 @@
         "Sep 2025": 0,
         "Oct 2025": 6,
         "Nov 2025": 2,
-        "Dec 2025": 6,
+        "Dec 2025": 5,
         "Jan 2026": 1,
         "Feb 2026": 7,
         "Mar 2026": 12,
-        "Apr 2026": 36
+        "Apr 2026": 37
       }
     },
     {
@@ -289,7 +289,7 @@
         "Jan 2026": 1,
         "Feb 2026": 2,
         "Mar 2026": 4,
-        "Apr 2026": 1
+        "Apr 2026": 2
       }
     },
     {
@@ -307,7 +307,7 @@
         "Jan 2026": 3,
         "Feb 2026": 4,
         "Mar 2026": 12,
-        "Apr 2026": 16
+        "Apr 2026": 17
       }
     }
   ],
@@ -327,7 +327,7 @@
         "Jan 2026": 44,
         "Feb 2026": 72,
         "Mar 2026": 38,
-        "Apr 2026": 27
+        "Apr 2026": 28
       }
     },
     {
@@ -345,7 +345,7 @@
         "Jan 2026": 74,
         "Feb 2026": 92,
         "Mar 2026": 45,
-        "Apr 2026": 56
+        "Apr 2026": 58
       }
     },
     {
@@ -363,7 +363,7 @@
         "Jan 2026": 8,
         "Feb 2026": 8,
         "Mar 2026": 8,
-        "Apr 2026": 1
+        "Apr 2026": 2
       }
     },
     {
@@ -381,7 +381,7 @@
         "Jan 2026": 40,
         "Feb 2026": 38,
         "Mar 2026": 37,
-        "Apr 2026": 20
+        "Apr 2026": 21
       }
     }
   ],
@@ -464,69 +464,69 @@
       "region": "INDIA",
       "months": {
         "Apr 2025": {
-          "total": 23,
-          "withinSLA": 20,
-          "slaPct": 87.0
+          "total": 53,
+          "withinSLA": 26,
+          "slaPct": 49.1
         },
         "May 2025": {
-          "total": 55,
-          "withinSLA": 33,
-          "slaPct": 60.0
+          "total": 56,
+          "withinSLA": 30,
+          "slaPct": 53.6
         },
         "Jun 2025": {
-          "total": 59,
-          "withinSLA": 32,
-          "slaPct": 54.2
+          "total": 79,
+          "withinSLA": 37,
+          "slaPct": 46.8
         },
         "Jul 2025": {
-          "total": 65,
-          "withinSLA": 33,
-          "slaPct": 50.8
+          "total": 60,
+          "withinSLA": 29,
+          "slaPct": 48.3
         },
         "Aug 2025": {
-          "total": 62,
-          "withinSLA": 23,
-          "slaPct": 37.1
+          "total": 41,
+          "withinSLA": 22,
+          "slaPct": 53.7
         },
         "Sep 2025": {
-          "total": 51,
-          "withinSLA": 25,
-          "slaPct": 49.0
+          "total": 60,
+          "withinSLA": 33,
+          "slaPct": 55.0
         },
         "Oct 2025": {
-          "total": 45,
-          "withinSLA": 23,
-          "slaPct": 51.1
+          "total": 27,
+          "withinSLA": 18,
+          "slaPct": 66.7
         },
         "Nov 2025": {
-          "total": 57,
-          "withinSLA": 44,
-          "slaPct": 77.2
+          "total": 65,
+          "withinSLA": 48,
+          "slaPct": 73.8
         },
         "Dec 2025": {
-          "total": 57,
-          "withinSLA": 42,
-          "slaPct": 73.7
+          "total": 60,
+          "withinSLA": 40,
+          "slaPct": 66.7
         },
         "Jan 2026": {
-          "total": 41,
-          "withinSLA": 29,
-          "slaPct": 70.7
+          "total": 40,
+          "withinSLA": 28,
+          "slaPct": 70.0
         },
         "Feb 2026": {
-          "total": 61,
+          "total": 68,
           "withinSLA": 48,
-          "slaPct": 78.7
+          "slaPct": 70.6
         },
         "Mar 2026": {
-          "total": 50,
-          "withinSLA": 36,
-          "slaPct": 72.0
+          "total": 38,
+          "withinSLA": 29,
+          "slaPct": 76.3
         },
         "Apr 2026": {
-          "total": 18,
-          "withinSLA": 9,
-          "slaPct": 50.0
+          "total": 28,
+          "withinSLA": 27,
+          "slaPct": 96.4
         }
       }
     },
@@ -534,69 +534,69 @@
       "region": "MEENA",
       "months": {
         "Apr 2025": {
-          "total": 53,
-          "withinSLA": 47,
-          "slaPct": 88.7
+          "total": 88,
+          "withinSLA": 50,
+          "slaPct": 56.8
         },
         "May 2025": {
-          "total": 52,
+          "total": 82,
           "withinSLA": 25,
-          "slaPct": 48.1
+          "slaPct": 30.5
         },
         "Jun 2025": {
-          "total": 54,
-          "withinSLA": 12,
-          "slaPct": 22.2
+          "total": 52,
+          "withinSLA": 15,
+          "slaPct": 28.8
         },
         "Jul 2025": {
-          "total": 56,
-          "withinSLA": 19,
-          "slaPct": 33.9
+          "total": 80,
+          "withinSLA": 18,
+          "slaPct": 22.5
         },
         "Aug 2025": {
-          "total": 45,
+          "total": 53,
           "withinSLA": 9,
-          "slaPct": 20.0
+          "slaPct": 17.0
         },
         "Sep 2025": {
-          "total": 91,
-          "withinSLA": 19,
-          "slaPct": 20.9
+          "total": 61,
+          "withinSLA": 16,
+          "slaPct": 26.2
         },
         "Oct 2025": {
           "total": 55,
-          "withinSLA": 19,
-          "slaPct": 34.5
+          "withinSLA": 24,
+          "slaPct": 43.6
         },
         "Nov 2025": {
-          "total": 58,
-          "withinSLA": 30,
-          "slaPct": 51.7
+          "total": 53,
+          "withinSLA": 24,
+          "slaPct": 45.3
         },
         "Dec 2025": {
-          "total": 47,
-          "withinSLA": 16,
-          "slaPct": 34.0
+          "total": 50,
+          "withinSLA": 15,
+          "slaPct": 30.0
         },
         "Jan 2026": {
-          "total": 68,
-          "withinSLA": 25,
-          "slaPct": 36.8
+          "total": 66,
+          "withinSLA": 31,
+          "slaPct": 47.0
         },
         "Feb 2026": {
-          "total": 78,
-          "withinSLA": 54,
-          "slaPct": 69.2
+          "total": 83,
+          "withinSLA": 53,
+          "slaPct": 63.9
         },
         "Mar 2026": {
-          "total": 48,
-          "withinSLA": 16,
-          "slaPct": 33.3
+          "total": 43,
+          "withinSLA": 14,
+          "slaPct": 32.6
         },
         "Apr 2026": {
-          "total": 42,
-          "withinSLA": 19,
-          "slaPct": 45.2
+          "total": 56,
+          "withinSLA": 44,
+          "slaPct": 78.6
         }
       }
     },
@@ -604,69 +604,69 @@
       "region": "UK",
       "months": {
         "Apr 2025": {
-          "total": 4,
+          "total": 7,
           "withinSLA": 3,
-          "slaPct": 75.0
+          "slaPct": 42.9
         },
         "May 2025": {
-          "total": 1,
-          "withinSLA": 1,
-          "slaPct": 100.0
+          "total": 9,
+          "withinSLA": 5,
+          "slaPct": 55.6
         },
         "Jun 2025": {
-          "total": 10,
-          "withinSLA": 5,
-          "slaPct": 50.0
+          "total": 9,
+          "withinSLA": 1,
+          "slaPct": 11.1
         },
         "Jul 2025": {
+          "total": 5,
+          "withinSLA": 3,
+          "slaPct": 60.0
+        },
+        "Aug 2025": {
           "total": 11,
           "withinSLA": 3,
           "slaPct": 27.3
         },
-        "Aug 2025": {
-          "total": 2,
-          "withinSLA": 2,
-          "slaPct": 100.0
-        },
         "Sep 2025": {
-          "total": 8,
+          "total": 6,
           "withinSLA": 2,
-          "slaPct": 25.0
+          "slaPct": 33.3
         },
         "Oct 2025": {
           "total": 3,
-          "withinSLA": 1,
-          "slaPct": 33.3
+          "withinSLA": 0,
+          "slaPct": 0.0
         },
         "Nov 2025": {
-          "total": 8,
+          "total": 6,
           "withinSLA": 2,
-          "slaPct": 25.0
+          "slaPct": 33.3
         },
         "Dec 2025": {
-          "total": 3,
+          "total": 6,
           "withinSLA": 0,
           "slaPct": 0.0
         },
         "Jan 2026": {
-          "total": 11,
-          "withinSLA": 3,
-          "slaPct": 27.3
+          "total": 7,
+          "withinSLA": 4,
+          "slaPct": 57.1
         },
         "Feb 2026": {
-          "total": 5,
-          "withinSLA": 1,
-          "slaPct": 20.0
-        },
-        "Mar 2026": {
           "total": 4,
-          "withinSLA": 2,
-          "slaPct": 50.0
-        },
-        "Apr 2026": {
-          "total": 1,
           "withinSLA": 0,
           "slaPct": 0.0
+        },
+        "Mar 2026": {
+          "total": 7,
+          "withinSLA": 2,
+          "slaPct": 28.6
+        },
+        "Apr 2026": {
+          "total": 2,
+          "withinSLA": 2,
+          "slaPct": 100.0
         }
       }
     },
@@ -677,89 +677,89 @@
         "May 2025": null,
         "Jun 2025": null,
         "Jul 2025": {
-          "total": 5,
-          "withinSLA": 5,
-          "slaPct": 100.0
+          "total": 21,
+          "withinSLA": 9,
+          "slaPct": 42.9
         },
         "Aug 2025": {
-          "total": 26,
-          "withinSLA": 14,
-          "slaPct": 53.8
+          "total": 17,
+          "withinSLA": 10,
+          "slaPct": 58.8
         },
         "Sep 2025": {
-          "total": 10,
+          "total": 20,
           "withinSLA": 6,
-          "slaPct": 60.0
+          "slaPct": 30.0
         },
         "Oct 2025": {
-          "total": 16,
+          "total": 10,
           "withinSLA": 5,
-          "slaPct": 31.2
+          "slaPct": 50.0
         },
         "Nov 2025": {
-          "total": 13,
-          "withinSLA": 10,
-          "slaPct": 76.9
+          "total": 19,
+          "withinSLA": 14,
+          "slaPct": 73.7
         },
         "Dec 2025": {
-          "total": 15,
-          "withinSLA": 14,
-          "slaPct": 93.3
+          "total": 19,
+          "withinSLA": 10,
+          "slaPct": 52.6
         },
         "Jan 2026": {
           "total": 32,
-          "withinSLA": 13,
-          "slaPct": 40.6
+          "withinSLA": 20,
+          "slaPct": 62.5
         },
         "Feb 2026": {
-          "total": 25,
-          "withinSLA": 21,
-          "slaPct": 84.0
+          "total": 34,
+          "withinSLA": 16,
+          "slaPct": 47.1
         },
         "Mar 2026": {
-          "total": 17,
-          "withinSLA": 12,
-          "slaPct": 70.6
+          "total": 30,
+          "withinSLA": 15,
+          "slaPct": 50.0
         },
         "Apr 2026": {
-          "total": 28,
-          "withinSLA": 9,
-          "slaPct": 32.1
+          "total": 21,
+          "withinSLA": 17,
+          "slaPct": 81.0
         }
       }
     }
   ],
   "slaOverall": {
     "INDIA": {
-      "total": 644,
-      "withinSLA": 397,
-      "slaPct": 61.6,
-      "avgTTGL": 16.1
+      "total": 675,
+      "withinSLA": 415,
+      "slaPct": 61.5,
+      "avgDuration": 17.0
     },
     "MEENA": {
-      "total": 747,
-      "withinSLA": 310,
-      "slaPct": 41.5,
-      "avgTTGL": 27.8
+      "total": 822,
+      "withinSLA": 338,
+      "slaPct": 41.1,
+      "avgDuration": 30.7
     },
     "UK": {
-      "total": 71,
-      "withinSLA": 25,
-      "slaPct": 35.2,
-      "avgTTGL": 36.6
+      "total": 82,
+      "withinSLA": 27,
+      "slaPct": 32.9,
+      "avgDuration": 41.0
     },
     "US": {
-      "total": 187,
-      "withinSLA": 109,
-      "slaPct": 58.3,
-      "avgTTGL": 24.2
+      "total": 223,
+      "withinSLA": 122,
+      "slaPct": 54.7,
+      "avgDuration": 25.3
     }
   },
   "ageingData": [
     {
       "region": "INDIA",
-      "total": 30,
-      "gt7": 19,
+      "total": 29,
+      "gt7": 18,
       "gt14": 13,
       "gt28": 10,
       "gt60": 7
@@ -767,14 +767,14 @@
     {
       "region": "MEENA",
       "total": 73,
-      "gt7": 60,
-      "gt14": 47,
-      "gt28": 35,
-      "gt60": 24
+      "gt7": 59,
+      "gt14": 46,
+      "gt28": 34,
+      "gt60": 23
     },
     {
       "region": "UK",
-      "total": 10,
+      "total": 11,
       "gt7": 10,
       "gt14": 9,
       "gt28": 8,
@@ -782,7 +782,7 @@
     },
     {
       "region": "US",
-      "total": 35,
+      "total": 36,
       "gt7": 30,
       "gt14": 23,
       "gt28": 16,

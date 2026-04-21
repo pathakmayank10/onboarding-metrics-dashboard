@@ -164,16 +164,16 @@
         },
         {
           "month": "Apr 2026",
-          "cwValue": 647,
-          "m0": 249,
+          "cwValue": 664,
+          "m0": 261,
           "m1": null,
           "m2": null,
           "m3": null,
           "m4": null,
           "m5": null,
           "m6plus": null,
-          "revRealised": 249,
-          "pctRealised": 0.3849
+          "revRealised": 261,
+          "pctRealised": 0.3931
         }
       ]
     },
@@ -293,11 +293,11 @@
           "m1": 1578,
           "m2": 1450,
           "m3": 255,
-          "m4": null,
+          "m4": 750,
           "m5": null,
           "m6plus": null,
-          "revRealised": 5210,
-          "pctRealised": 0.6033
+          "revRealised": 5960,
+          "pctRealised": 0.6901
         },
         {
           "month": "Jan 2026",
@@ -340,16 +340,16 @@
         },
         {
           "month": "Apr 2026",
-          "cwValue": 6762,
-          "m0": 2238,
+          "cwValue": 6889,
+          "m0": 2258,
           "m1": null,
           "m2": null,
           "m3": null,
           "m4": null,
           "m5": null,
           "m6plus": null,
-          "revRealised": 2238,
-          "pctRealised": 0.331
+          "revRealised": 2258,
+          "pctRealised": 0.3278
         }
       ]
     },
@@ -516,7 +516,7 @@
         },
         {
           "month": "Apr 2026",
-          "cwValue": 107,
+          "cwValue": 216,
           "m0": null,
           "m1": null,
           "m2": null,
@@ -653,7 +653,7 @@
         },
         {
           "month": "Apr 2026",
-          "cwValue": 1438,
+          "cwValue": 1497,
           "m0": 387,
           "m1": null,
           "m2": null,
@@ -662,27 +662,27 @@
           "m5": null,
           "m6plus": null,
           "revRealised": 387,
-          "pctRealised": 0.2691
+          "pctRealised": 0.2585
         }
       ]
     }
   ],
   "openPendingMRR": {
     "INDIA": {
-      "mrr": 1361,
-      "count": 30
+      "mrr": 1366,
+      "count": 29
     },
     "MEENA": {
-      "mrr": 14612,
+      "mrr": 13969,
       "count": 73
     },
     "UK": {
-      "mrr": 1386,
-      "count": 10
+      "mrr": 1495,
+      "count": 11
     },
     "US": {
-      "mrr": 3218,
-      "count": 35
+      "mrr": 3277,
+      "count": 36
     }
   }
 }
