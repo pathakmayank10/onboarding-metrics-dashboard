@@ -1,15 +1,525 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Onboarding Metrics Dashboard</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script crossorigin src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/app.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onboarding Metrics Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #0f172a;
+      color: #f1f5f9;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .header {
+      margin-bottom: 30px;
+      border-bottom: 2px solid #1e3a5f;
+      padding-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+      color: #f1f5f9;
+    }
+
+    .last-refreshed {
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #1e3a5f;
+    }
+
+    .tab-button {
+      padding: 12px 24px;
+      background-color: transparent;
+      color: #94a3b8;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .tab-button.active {
+      color: #f1f5f9;
+      border-bottom-color: #3b82f6;
+    }
+
+    .tab-button:hover {
+      color: #cbd5e1;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #f1f5f9;
+      padding: 12px 16px;
+      background-color: #1e3a5f;
+      border-radius: 6px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-label {
+      font-size: 12px;
+      color: #94a3b8;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card-value {
+      font-size: 28px;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 8px;
+    }
+
+    .card-detail {
+      font-size: 13px;
+      color: #cbd5e1;
+    }
+
+    .chart-container {
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 30px;
+      position: relative;
+      height: 400px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+
+    thead th {
+      background-color: #1e3a5f;
+      color: #f1f5f9;
+      padding: 12px;
+      text-align: left;
+      font-size: 13px;
+      font-weight: 600;
+      border-bottom: 2px solid #334155;
+    }
+
+    tbody td {
+      padding: 12px;
+      border-bottom: 1px solid #334155;
+      font-size: 13px;
+      color: #cbd5e1;
+    }
+
+    tbody tr:hover {
+      background-color: #162032;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 6px;
+      background-color: #334155;
+      border-radius: 3px;
+      margin-top: 8px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background-color: #3b82f6;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: #94a3b8;
+    }
+
+    .sla-good { color: #4ade80; font-weight: 500; }
+    .sla-warning { color: #fbbf24; font-weight: 500; }
+    .sla-bad { color: #f87171; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Onboarding Metrics Dashboard</h1>
+      <div class="last-refreshed">Last refreshed: <span id="refreshTime">Loading...</span></div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-button active" onclick="switchTab(event, 'ttgl')">TTGL</button>
+      <button class="tab-button" onclick="switchTab(event, 'revrec')">Revenue Realisation</button>
+      <button class="tab-button" onclick="switchTab(event, 'om')">OM Performance</button>
+    </div>
+
+    <div id="ttgl" class="tab-content active">
+      <div id="ttglContent" class="loading">Loading TTGL data...</div>
+    </div>
+
+    <div id="revrec" class="tab-content">
+      <div id="revrecContent" class="loading">Loading Revenue Realisation data...</div>
+    </div>
+
+    <div id="om" class="tab-content">
+      <div id="omContent" class="loading">Loading OM Performance data...</div>
+    </div>
+  </div>
+
+  <script>
+    let ttglData = null;
+    let revrecData = null;
+    let omData = null;
+    let charts = {};
+
+    async function loadData() {
+      try {
+        const [ttglResp, revrecResp, omResp] = await Promise.all([
+          fetch('./ttgl_data.json'),
+          fetch('./revrec_data.json'),
+          fetch('./om_performance.json')
+        ]);
+
+        ttglData = await ttglResp.json();
+        revrecData = await revrecResp.json();
+        omData = await omResp.json();
+
+        updateRefreshTime();
+        renderTTGL();
+        renderRevRec();
+        renderOM();
+      } catch (error) {
+        console.error('Data load error:', error);
+        document.getElementById('ttglContent').innerHTML = `<div class="loading"><strong>Error:</strong> ${error.message}</div>`;
+      }
+    }
+
+    function updateRefreshTime() {
+      const timestamp = ttglData?.computedAt || new Date().toISOString();
+      const date = new Date(timestamp);
+      const formatted = date.toLocaleString('en-IN', {
+        timeZone: 'Asia/Kolkata',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+      document.getElementById('refreshTime').textContent = formatted + ' IST';
+    }
+
+    function switchTab(event, tabName) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      
+      document.getElementById(tabName).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    function renderTTGL() {
+      const summary = ttglData?.regionSummary || {};
+      const monthly = ttglData?.monthlyTTGL || [];
+      const aging = ttglData?.agingBuckets || [];
+      const sla = ttglData?.slaByRegion || {};
+
+      let html = `
+        <div class="section">
+          <div class="section-title">TTGL Summary by Region</div>
+          <div class="cards-grid">
+            ${Object.entries(summary).map(([region, data]) => `
+              <div class="card">
+                <div class="card-label">${region}</div>
+                <div class="card-value">${(data.avgTTGL || 0).toFixed(1)}</div>
+                <div class="card-detail">Avg TTGL (days) | ${data.closedLiveCount || 0} closed</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">TTGL by Month</div>
+          <table>
+            <thead>
+              <tr>
+                <th>Month</th>
+                <th>INDIA</th>
+                <th>MEENA</th>
+                <th>UK</th>
+                <th>US</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${monthly.map(row => `
+                <tr>
+                  <td>${row.month}</td>
+                  <td>${(row.INDIA || 0).toFixed(1)}</td>
+                  <td>${(row.MEENA || 0).toFixed(1)}</td>
+                  <td>${(row.UK || 0).toFixed(1)}</td>
+                  <td>${(row.US || 0).toFixed(1)}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Avg TTGL Trend (14-day SLA Target)</div>
+          <div class="chart-container">
+            <canvas id="ttglChart"></canvas>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">SLA Compliance</div>
+          <div class="cards-grid">
+            ${Object.entries(sla).map(([region, data]) => {
+              const pct = (data.slaPercentage || 0);
+              const cls = pct >= 75 ? 'sla-good' : pct >= 50 ? 'sla-warning' : 'sla-bad';
+              return `
+                <div class="card">
+                  <div class="card-label">${region}</div>
+                  <div class="card-value ${cls}">${pct.toFixed(1)}%</div>
+                  <div class="card-detail">${data.withinSLA || 0} / ${data.totalClosed || 0}</div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: ${Math.min(pct, 100)}%"></div>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Open Project Ageing</div>
+          <table>
+            <thead>
+              <tr>
+                <th>Age Bucket</th>
+                <th>INDIA</th>
+                <th>MEENA</th>
+                <th>UK</th>
+                <th>US</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${aging.map(b => `
+                <tr>
+                  <td>${b.range}</td>
+                  <td>${b.INDIA?.count || 0} (${(b.INDIA?.percentage || 0).toFixed(1)}%)</td>
+                  <td>${b.MEENA?.count || 0} (${(b.MEENA?.percentage || 0).toFixed(1)}%)</td>
+                  <td>${b.UK?.count || 0} (${(b.UK?.percentage || 0).toFixed(1)}%)</td>
+                  <td>${b.US?.count || 0} (${(b.US?.percentage || 0).toFixed(1)}%)</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      `;
+
+      document.getElementById('ttglContent').innerHTML = html;
+      setTimeout(drawTTGLChart, 100);
+    }
+
+    function drawTTGLChart() {
+      const ctx = document.getElementById('ttglChart')?.getContext('2d');
+      if (!ctx || !ttglData?.monthlyTTGL) return;
+
+      if (charts.ttgl) charts.ttgl.destroy();
+
+      const data = ttglData.monthlyTTGL;
+      charts.ttgl = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: data.map(d => d.month),
+          datasets: [
+            { label: 'INDIA', data: data.map(d => d.INDIA || 0), borderColor: '#3b82f6', tension: 0.4, fill: false, borderWidth: 2 },
+            { label: 'MEENA', data: data.map(d => d.MEENA || 0), borderColor: '#f59e0b', tension: 0.4, fill: false, borderWidth: 2 },
+            { label: 'UK', data: data.map(d => d.UK || 0), borderColor: '#10b981', tension: 0.4, fill: false, borderWidth: 2 },
+            { label: 'US', data: data.map(d => d.US || 0), borderColor: '#8b5cf6', tension: 0.4, fill: false, borderWidth: 2 },
+            { label: 'SLA Target (14d)', data: Array(data.length).fill(14), borderColor: '#dc2626', borderDash: [5, 5], fill: false, borderWidth: 2, pointRadius: 0 }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { labels: { color: '#cbd5e1', font: { size: 12 } } } },
+          scales: {
+            x: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' } },
+            y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' } }
+          }
+        }
+      });
+    }
+
+    function renderRevRec() {
+      const pending = revrecData?.openPendingMRR || {};
+      const currencies = { INDIA: '₹', MEENA: 'AED', UK: '£', US: '$' };
+      const regions = ['INDIA', 'MEENA', 'UK', 'US'];
+
+      let html = `
+        <div class="section">
+          <div class="section-title">Pending MRR by Region</div>
+          <div class="cards-grid">
+            ${regions.map(r => `
+              <div class="card">
+                <div class="card-label">${r}</div>
+                <div class="card-value">${currencies[r]} ${(pending[r] || 0).toLocaleString('en-IN')}</div>
+                <div class="card-detail">Pending MRR (Open)</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+
+      regions.forEach(region => {
+        const cohorts = revrecData?.cohortsByRegion?.[region] || [];
+        if (cohorts.length === 0) return;
+
+        html += `
+          <div class="section">
+            <div class="section-title">${region} Revenue Realisation</div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Cohort</th><th>CW Value</th><th>M0</th><th>M1</th><th>M2</th><th>M3</th><th>M4</th><th>M5</th><th>M6+</th><th>Rev Realised</th><th>%-age</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${cohorts.map(c => `
+                  <tr>
+                    <td>${c.month}</td>
+                    <td>${(c.cwValue || 0).toLocaleString()}</td>
+                    <td>${(c.m0 || 0).toLocaleString()}</td>
+                    <td>${(c.m1 || 0).toLocaleString()}</td>
+                    <td>${(c.m2 || 0).toLocaleString()}</td>
+                    <td>${(c.m3 || 0).toLocaleString()}</td>
+                    <td>${(c.m4 || 0).toLocaleString()}</td>
+                    <td>${(c.m5 || 0).toLocaleString()}</td>
+                    <td>${(c.m6Plus || 0).toLocaleString()}</td>
+                    <td>${(c.revRealised || 0).toLocaleString()}</td>
+                    <td>${(c.percentageRealised || 0).toFixed(1)}%</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          </div>
+        `;
+      });
+
+      document.getElementById('revrecContent').innerHTML = html;
+    }
+
+    function renderOM() {
+      const summary = omData?.summary || {};
+      const oms = omData?.oms || [];
+
+      let html = `
+        <div class="section">
+          <div class="section-title">OM Summary</div>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-label">Total OMs</div>
+              <div class="card-value">${summary.totalOMs || 0}</div>
+            </div>
+            <div class="card">
+              <div class="card-label">Total Projects</div>
+              <div class="card-value">${summary.totalProjects || 0}</div>
+            </div>
+            <div class="card">
+              <div class="card-label">Overall SLA %</div>
+              <div class="card-value">${(summary.overallSLA || 0).toFixed(1)}%</div>
+            </div>
+            <div class="card">
+              <div class="card-label">Avg TTGL</div>
+              <div class="card-value">${(summary.avgTTGL || 0).toFixed(1)}d</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">OM Leaderboard</div>
+          <table>
+            <thead>
+              <tr>
+                <th>OM Name</th><th>Region</th><th>Projects</th><th>Closed Live</th><th>SLA %</th><th>Avg TTGL</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${oms.slice(0, 30).map(om => {
+                const pct = (om.slaPercentage || 0);
+                const cls = pct >= 75 ? 'sla-good' : pct >= 50 ? 'sla-warning' : 'sla-bad';
+                return `
+                  <tr>
+                    <td>${om.name}</td>
+                    <td>${om.region}</td>
+                    <td>${om.totalProjects || 0}</td>
+                    <td>${om.closedLiveCount || 0}</td>
+                    <td class="${cls}">${pct.toFixed(1)}%</td>
+                    <td>${(om.avgTTGL || 0).toFixed(1)}</td>
+                  </tr>
+                `;
+              }).join('')}
+            </tbody>
+          </table>
+        </div>
+      `;
+
+      document.getElementById('omContent').innerHTML = html;
+    }
+
+    window.addEventListener('load', loadData);
+  </script>
+</body>
 </html>
