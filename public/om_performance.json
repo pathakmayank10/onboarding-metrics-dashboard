@@ -1,5 +1,5 @@
 {
-  "computedAt": "2026-04-21",
+  "computedAt": "2026-04-22",
   "oms": [
     {
       "name": "Aniket Gholap",
@@ -232,18 +232,18 @@
         "INDIA",
         "MEENA"
       ],
-      "total": 215,
-      "live": 154,
+      "total": 216,
+      "live": 156,
       "drop": 38,
-      "open": 23,
-      "liveRate": 0.716,
-      "dropRate": 0.177,
-      "avgTTGL": 22.6,
-      "slaWithin": 93,
-      "slaPct": 0.604,
+      "open": 22,
+      "liveRate": 0.722,
+      "dropRate": 0.176,
+      "avgTTGL": 22.7,
+      "slaWithin": 94,
+      "slaPct": 0.603,
       "openAvgAge": null,
-      "mrrRealised": 22812,
-      "mrrPending": 2542,
+      "mrrRealised": 22867,
+      "mrrPending": 2546,
       "mrrDropped": 9535,
       "monthlyTrend": {
         "Apr 2025": {
@@ -319,7 +319,7 @@
         "Feb 2026": {
           "live": 19,
           "drop": 5,
-          "openCreated": 3,
+          "openCreated": 2,
           "avgTTGL": 20.5,
           "slaPct": 0.632
         },
@@ -331,11 +331,11 @@
           "slaPct": 0.455
         },
         "Apr 2026": {
-          "live": 11,
+          "live": 13,
           "drop": 1,
           "openCreated": 13,
-          "avgTTGL": 18.8,
-          "slaPct": 0.636
+          "avgTTGL": 21.4,
+          "slaPct": 0.615
         }
       }
     },
@@ -344,18 +344,18 @@
       "regions": [
         "US"
       ],
-      "total": 150,
+      "total": 151,
       "live": 119,
       "drop": 14,
-      "open": 17,
-      "liveRate": 0.793,
+      "open": 18,
+      "liveRate": 0.788,
       "dropRate": 0.093,
       "avgTTGL": 23.0,
       "slaWithin": 68,
       "slaPct": 0.571,
       "openAvgAge": null,
       "mrrRealised": 9784,
-      "mrrPending": 1632,
+      "mrrPending": 1691,
       "mrrDropped": 898,
       "monthlyTrend": {
         "Apr 2025": {
@@ -445,7 +445,7 @@
         "Apr 2026": {
           "live": 15,
           "drop": 0,
-          "openCreated": 7,
+          "openCreated": 8,
           "avgTTGL": 39.8,
           "slaPct": 0.267
         }
@@ -682,17 +682,17 @@
         "MEENA"
       ],
       "total": 152,
-      "live": 104,
+      "live": 105,
       "drop": 33,
-      "open": 15,
-      "liveRate": 0.684,
+      "open": 14,
+      "liveRate": 0.691,
       "dropRate": 0.217,
-      "avgTTGL": 25.7,
+      "avgTTGL": 25.6,
       "slaWithin": 46,
-      "slaPct": 0.442,
+      "slaPct": 0.438,
       "openAvgAge": null,
-      "mrrRealised": 8947,
-      "mrrPending": 1313,
+      "mrrRealised": 9027,
+      "mrrPending": 1233,
       "mrrDropped": 2414,
       "monthlyTrend": {
         "Apr 2025": {
@@ -780,11 +780,11 @@
           "slaPct": 0.6
         },
         "Apr 2026": {
-          "live": 13,
+          "live": 14,
           "drop": 0,
-          "openCreated": 13,
-          "avgTTGL": 16.5,
-          "slaPct": 0.615
+          "openCreated": 12,
+          "avgTTGL": 16.4,
+          "slaPct": 0.571
         }
       }
     },
@@ -2700,17 +2700,17 @@
       ],
       "total": 10,
       "live": 4,
-      "drop": 1,
-      "open": 5,
+      "drop": 2,
+      "open": 4,
       "liveRate": 0.4,
-      "dropRate": 0.1,
+      "dropRate": 0.2,
       "avgTTGL": 15.2,
       "slaWithin": 2,
       "slaPct": 0.5,
       "openAvgAge": null,
       "mrrRealised": 196,
-      "mrrPending": 313,
-      "mrrDropped": 49,
+      "mrrPending": 264,
+      "mrrDropped": 98,
       "monthlyTrend": {
         "Apr 2025": {
           "live": 0,
@@ -2798,8 +2798,8 @@
         },
         "Apr 2026": {
           "live": 2,
-          "drop": 0,
-          "openCreated": 4,
+          "drop": 1,
+          "openCreated": 3,
           "avgTTGL": 10.5,
           "slaPct": 0.5
         }
@@ -5389,18 +5389,18 @@
       "regions": [
         "US"
       ],
-      "total": 5,
+      "total": 4,
       "live": 0,
       "drop": 1,
-      "open": 4,
+      "open": 3,
       "liveRate": 0.0,
-      "dropRate": 0.2,
+      "dropRate": 0.25,
       "avgTTGL": null,
       "slaWithin": 0,
       "slaPct": 0,
       "openAvgAge": null,
       "mrrRealised": 0,
-      "mrrPending": 237,
+      "mrrPending": 178,
       "mrrDropped": 49,
       "monthlyTrend": {
         "Apr 2025": {
@@ -5490,7 +5490,7 @@
         "Apr 2026": {
           "live": 0,
           "drop": 0,
-          "openCreated": 3,
+          "openCreated": 2,
           "avgTTGL": null,
           "slaPct": null
         }
@@ -5611,8 +5611,8 @@
   ],
   "summary": {
     "totalOMs": 50,
-    "totalProjects": 2133,
-    "overallSLAPct": 0.511,
+    "totalProjects": 2134,
+    "overallSLAPct": 0.51,
     "overallAvgTTGL": 30.5
   }
 }
