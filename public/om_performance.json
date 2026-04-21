@@ -1,0 +1,5506 @@
+{
+  "computedAt": "2026-04-21",
+  "oms": [
+    {
+      "name": "Aniket Gholap",
+      "regions": [
+        "INDIA"
+      ],
+      "total": 220,
+      "live": 205,
+      "drop": 10,
+      "open": 5,
+      "liveRate": 0.932,
+      "dropRate": 0.045,
+      "avgTTGL": 13.6,
+      "slaWithin": 140,
+      "slaPct": 0.683,
+      "openAvgAge": null,
+      "mrrRealised": 3284,
+      "mrrPending": 66,
+      "mrrDropped": 408,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 7,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 8.7,
+          "slaPct": 0.857
+        },
+        "May 2025": {
+          "live": 11,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 9.9,
+          "slaPct": 0.727
+        },
+        "Jun 2025": {
+          "live": 22,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 13.7,
+          "slaPct": 0.545
+        },
+        "Jul 2025": {
+          "live": 14,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 17.4,
+          "slaPct": 0.571
+        },
+        "Aug 2025": {
+          "live": 23,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 24.9,
+          "slaPct": 0.348
+        },
+        "Sep 2025": {
+          "live": 26,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 17.3,
+          "slaPct": 0.615
+        },
+        "Oct 2025": {
+          "live": 15,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 15.3,
+          "slaPct": 0.6
+        },
+        "Nov 2025": {
+          "live": 17,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 11.6,
+          "slaPct": 0.765
+        },
+        "Dec 2025": {
+          "live": 12,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 5.4,
+          "slaPct": 0.917
+        },
+        "Jan 2026": {
+          "live": 12,
+          "drop": 0,
+          "openCreated": 1,
+          "avgTTGL": 6.5,
+          "slaPct": 0.917
+        },
+        "Feb 2026": {
+          "live": 22,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 9.7,
+          "slaPct": 0.864
+        },
+        "Mar 2026": {
+          "live": 17,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 8.8,
+          "slaPct": 0.824
+        },
+        "Apr 2026": {
+          "live": 7,
+          "drop": 0,
+          "openCreated": 4,
+          "avgTTGL": 15.9,
+          "slaPct": 0.714
+        }
+      }
+    },
+    {
+      "name": "Aaqib Majeed Lone",
+      "regions": [
+        "INDIA",
+        "MEENA"
+      ],
+      "total": 198,
+      "live": 176,
+      "drop": 17,
+      "open": 5,
+      "liveRate": 0.889,
+      "dropRate": 0.086,
+      "avgTTGL": 17.9,
+      "slaWithin": 90,
+      "slaPct": 0.511,
+      "openAvgAge": null,
+      "mrrRealised": 3027,
+      "mrrPending": 187,
+      "mrrDropped": 2348,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 6,
+          "drop": 3,
+          "openCreated": 0,
+          "avgTTGL": 9.0,
+          "slaPct": 0.833
+        },
+        "May 2025": {
+          "live": 16,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 17.5,
+          "slaPct": 0.5
+        },
+        "Jun 2025": {
+          "live": 10,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 15.3,
+          "slaPct": 0.7
+        },
+        "Jul 2025": {
+          "live": 20,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 17.1,
+          "slaPct": 0.45
+        },
+        "Aug 2025": {
+          "live": 19,
+          "drop": 3,
+          "openCreated": 0,
+          "avgTTGL": 30.5,
+          "slaPct": 0.263
+        },
+        "Sep 2025": {
+          "live": 22,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 19.1,
+          "slaPct": 0.409
+        },
+        "Oct 2025": {
+          "live": 19,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 21.7,
+          "slaPct": 0.474
+        },
+        "Nov 2025": {
+          "live": 16,
+          "drop": 3,
+          "openCreated": 0,
+          "avgTTGL": 15.4,
+          "slaPct": 0.688
+        },
+        "Dec 2025": {
+          "live": 17,
+          "drop": 0,
+          "openCreated": 1,
+          "avgTTGL": 13.1,
+          "slaPct": 0.588
+        },
+        "Jan 2026": {
+          "live": 11,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 14.9,
+          "slaPct": 0.545
+        },
+        "Feb 2026": {
+          "live": 12,
+          "drop": 0,
+          "openCreated": 1,
+          "avgTTGL": 13.3,
+          "slaPct": 0.583
+        },
+        "Mar 2026": {
+          "live": 5,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 14.0,
+          "slaPct": 0.4
+        },
+        "Apr 2026": {
+          "live": 3,
+          "drop": 0,
+          "openCreated": 3,
+          "avgTTGL": 13.7,
+          "slaPct": 0.667
+        }
+      }
+    },
+    {
+      "name": "Prince Yadav",
+      "regions": [
+        "INDIA",
+        "MEENA"
+      ],
+      "total": 215,
+      "live": 153,
+      "drop": 38,
+      "open": 24,
+      "liveRate": 0.712,
+      "dropRate": 0.177,
+      "avgTTGL": 22.7,
+      "slaWithin": 92,
+      "slaPct": 0.601,
+      "openAvgAge": null,
+      "mrrRealised": 22792,
+      "mrrPending": 2562,
+      "mrrDropped": 9535,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 27,
+          "drop": 3,
+          "openCreated": 0,
+          "avgTTGL": 2.6,
+          "slaPct": 0.963
+        },
+        "May 2025": {
+          "live": 11,
+          "drop": 3,
+          "openCreated": 0,
+          "avgTTGL": 10.5,
+          "slaPct": 0.727
+        },
+        "Jun 2025": {
+          "live": 5,
+          "drop": 5,
+          "openCreated": 0,
+          "avgTTGL": 23.0,
+          "slaPct": 0.2
+        },
+        "Jul 2025": {
+          "live": 12,
+          "drop": 4,
+          "openCreated": 0,
+          "avgTTGL": 25.3,
+          "slaPct": 0.333
+        },
+        "Aug 2025": {
+          "live": 2,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 9.0,
+          "slaPct": 0.5
+        },
+        "Sep 2025": {
+          "live": 13,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 28.5,
+          "slaPct": 0.462
+        },
+        "Oct 2025": {
+          "live": 10,
+          "drop": 6,
+          "openCreated": 2,
+          "avgTTGL": 29.5,
+          "slaPct": 0.7
+        },
+        "Nov 2025": {
+          "live": 7,
+          "drop": 4,
+          "openCreated": 0,
+          "avgTTGL": 61.1,
+          "slaPct": 0.429
+        },
+        "Dec 2025": {
+          "live": 8,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 24.6,
+          "slaPct": 0.25
+        },
+        "Jan 2026": {
+          "live": 18,
+          "drop": 3,
+          "openCreated": 0,
+          "avgTTGL": 36.4,
+          "slaPct": 0.611
+        },
+        "Feb 2026": {
+          "live": 19,
+          "drop": 5,
+          "openCreated": 3,
+          "avgTTGL": 20.5,
+          "slaPct": 0.632
+        },
+        "Mar 2026": {
+          "live": 11,
+          "drop": 1,
+          "openCreated": 5,
+          "avgTTGL": 28.0,
+          "slaPct": 0.455
+        },
+        "Apr 2026": {
+          "live": 10,
+          "drop": 1,
+          "openCreated": 14,
+          "avgTTGL": 20.0,
+          "slaPct": 0.6
+        }
+      }
+    },
+    {
+      "name": "Ritik Kumar Roshan",
+      "regions": [
+        "US"
+      ],
+      "total": 150,
+      "live": 119,
+      "drop": 14,
+      "open": 17,
+      "liveRate": 0.793,
+      "dropRate": 0.093,
+      "avgTTGL": 23.0,
+      "slaWithin": 68,
+      "slaPct": 0.571,
+      "openAvgAge": null,
+      "mrrRealised": 9784,
+      "mrrPending": 1632,
+      "mrrDropped": 898,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 2,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 8.0,
+          "slaPct": 1.0
+        },
+        "Aug 2025": {
+          "live": 19,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 14.6,
+          "slaPct": 0.579
+        },
+        "Sep 2025": {
+          "live": 8,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 18.5,
+          "slaPct": 0.5
+        },
+        "Oct 2025": {
+          "live": 7,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 23.6,
+          "slaPct": 0.286
+        },
+        "Nov 2025": {
+          "live": 10,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 14.5,
+          "slaPct": 0.8
+        },
+        "Dec 2025": {
+          "live": 9,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 8.0,
+          "slaPct": 0.889
+        },
+        "Jan 2026": {
+          "live": 21,
+          "drop": 4,
+          "openCreated": 1,
+          "avgTTGL": 43.8,
+          "slaPct": 0.333
+        },
+        "Feb 2026": {
+          "live": 18,
+          "drop": 1,
+          "openCreated": 1,
+          "avgTTGL": 14.0,
+          "slaPct": 0.833
+        },
+        "Mar 2026": {
+          "live": 10,
+          "drop": 2,
+          "openCreated": 8,
+          "avgTTGL": 14.5,
+          "slaPct": 0.7
+        },
+        "Apr 2026": {
+          "live": 15,
+          "drop": 0,
+          "openCreated": 7,
+          "avgTTGL": 39.8,
+          "slaPct": 0.267
+        }
+      }
+    },
+    {
+      "name": "Justin V",
+      "regions": [
+        "MEENA"
+      ],
+      "total": 139,
+      "live": 118,
+      "drop": 15,
+      "open": 6,
+      "liveRate": 0.849,
+      "dropRate": 0.108,
+      "avgTTGL": 28.7,
+      "slaWithin": 28,
+      "slaPct": 0.237,
+      "openAvgAge": null,
+      "mrrRealised": 10951,
+      "mrrPending": 390,
+      "mrrDropped": 690,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 4,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 19.5,
+          "slaPct": 0.5
+        },
+        "May 2025": {
+          "live": 6,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 18.8,
+          "slaPct": 0.167
+        },
+        "Jun 2025": {
+          "live": 7,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 24.7,
+          "slaPct": 0.143
+        },
+        "Jul 2025": {
+          "live": 7,
+          "drop": 3,
+          "openCreated": 0,
+          "avgTTGL": 20.7,
+          "slaPct": 0.286
+        },
+        "Aug 2025": {
+          "live": 8,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 25.8,
+          "slaPct": 0.125
+        },
+        "Sep 2025": {
+          "live": 18,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 34.2,
+          "slaPct": 0.111
+        },
+        "Oct 2025": {
+          "live": 12,
+          "drop": 3,
+          "openCreated": 0,
+          "avgTTGL": 31.6,
+          "slaPct": 0.167
+        },
+        "Nov 2025": {
+          "live": 12,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 20.2,
+          "slaPct": 0.417
+        },
+        "Dec 2025": {
+          "live": 12,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 26.2,
+          "slaPct": 0.167
+        },
+        "Jan 2026": {
+          "live": 7,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 24.0,
+          "slaPct": 0.571
+        },
+        "Feb 2026": {
+          "live": 7,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 27.0,
+          "slaPct": 0.429
+        },
+        "Mar 2026": {
+          "live": 16,
+          "drop": 0,
+          "openCreated": 1,
+          "avgTTGL": 42.1,
+          "slaPct": 0.188
+        },
+        "Apr 2026": {
+          "live": 2,
+          "drop": 0,
+          "openCreated": 5,
+          "avgTTGL": 43.5,
+          "slaPct": 0.0
+        }
+      }
+    },
+    {
+      "name": "Manu Bhargavi",
+      "regions": [
+        "MEENA"
+      ],
+      "total": 120,
+      "live": 115,
+      "drop": 3,
+      "open": 2,
+      "liveRate": 0.958,
+      "dropRate": 0.025,
+      "avgTTGL": 25.8,
+      "slaWithin": 55,
+      "slaPct": 0.478,
+      "openAvgAge": null,
+      "mrrRealised": 7623,
+      "mrrPending": 270,
+      "mrrDropped": 122,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 9,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 8.9,
+          "slaPct": 0.889
+        },
+        "May 2025": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 5.0,
+          "slaPct": 1.0
+        },
+        "Jun 2025": {
+          "live": 7,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 15.4,
+          "slaPct": 0.571
+        },
+        "Jul 2025": {
+          "live": 9,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 12.7,
+          "slaPct": 0.556
+        },
+        "Aug 2025": {
+          "live": 10,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 45.5,
+          "slaPct": 0.1
+        },
+        "Sep 2025": {
+          "live": 16,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 58.5,
+          "slaPct": 0.125
+        },
+        "Oct 2025": {
+          "live": 10,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 29.6,
+          "slaPct": 0.3
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 11,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 61.0,
+          "slaPct": 0.182
+        },
+        "Jan 2026": {
+          "live": 16,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 11.1,
+          "slaPct": 0.312
+        },
+        "Feb 2026": {
+          "live": 22,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 3.0,
+          "slaPct": 1.0
+        },
+        "Mar 2026": {
+          "live": 2,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 6.5,
+          "slaPct": 1.0
+        },
+        "Apr 2026": {
+          "live": 2,
+          "drop": 0,
+          "openCreated": 2,
+          "avgTTGL": 20.0,
+          "slaPct": 0.0
+        }
+      }
+    },
+    {
+      "name": "Fahad R",
+      "regions": [
+        "INDIA",
+        "MEENA"
+      ],
+      "total": 151,
+      "live": 104,
+      "drop": 33,
+      "open": 14,
+      "liveRate": 0.689,
+      "dropRate": 0.219,
+      "avgTTGL": 25.7,
+      "slaWithin": 46,
+      "slaPct": 0.442,
+      "openAvgAge": null,
+      "mrrRealised": 8947,
+      "mrrPending": 1286,
+      "mrrDropped": 2414,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 1,
+          "drop": 3,
+          "openCreated": 0,
+          "avgTTGL": 11.0,
+          "slaPct": 1.0
+        },
+        "Jun 2025": {
+          "live": 4,
+          "drop": 4,
+          "openCreated": 0,
+          "avgTTGL": 22.2,
+          "slaPct": 0.25
+        },
+        "Jul 2025": {
+          "live": 9,
+          "drop": 8,
+          "openCreated": 0,
+          "avgTTGL": 38.3,
+          "slaPct": 0.222
+        },
+        "Aug 2025": {
+          "live": 7,
+          "drop": 5,
+          "openCreated": 0,
+          "avgTTGL": 22.9,
+          "slaPct": 0.286
+        },
+        "Sep 2025": {
+          "live": 13,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 27.5,
+          "slaPct": 0.308
+        },
+        "Oct 2025": {
+          "live": 8,
+          "drop": 3,
+          "openCreated": 0,
+          "avgTTGL": 35.6,
+          "slaPct": 0.25
+        },
+        "Nov 2025": {
+          "live": 8,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 27.2,
+          "slaPct": 0.125
+        },
+        "Dec 2025": {
+          "live": 9,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 9.3,
+          "slaPct": 0.667
+        },
+        "Jan 2026": {
+          "live": 8,
+          "drop": 3,
+          "openCreated": 0,
+          "avgTTGL": 44.5,
+          "slaPct": 0.375
+        },
+        "Feb 2026": {
+          "live": 14,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 14.5,
+          "slaPct": 0.714
+        },
+        "Mar 2026": {
+          "live": 10,
+          "drop": 0,
+          "openCreated": 2,
+          "avgTTGL": 35.0,
+          "slaPct": 0.6
+        },
+        "Apr 2026": {
+          "live": 13,
+          "drop": 0,
+          "openCreated": 12,
+          "avgTTGL": 16.5,
+          "slaPct": 0.615
+        }
+      }
+    },
+    {
+      "name": "Aman Sachan",
+      "regions": [
+        "INDIA"
+      ],
+      "total": 117,
+      "live": 104,
+      "drop": 7,
+      "open": 6,
+      "liveRate": 0.889,
+      "dropRate": 0.06,
+      "avgTTGL": 16.1,
+      "slaWithin": 72,
+      "slaPct": 0.692,
+      "openAvgAge": null,
+      "mrrRealised": 1023,
+      "mrrPending": 246,
+      "mrrDropped": 87,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 115.0,
+          "slaPct": 0.0
+        },
+        "Oct 2025": {
+          "live": 8,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 14.0,
+          "slaPct": 0.5
+        },
+        "Nov 2025": {
+          "live": 20,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 8.2,
+          "slaPct": 0.9
+        },
+        "Dec 2025": {
+          "live": 12,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 10.4,
+          "slaPct": 0.833
+        },
+        "Jan 2026": {
+          "live": 13,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 14.3,
+          "slaPct": 0.538
+        },
+        "Feb 2026": {
+          "live": 21,
+          "drop": 2,
+          "openCreated": 1,
+          "avgTTGL": 15.8,
+          "slaPct": 0.857
+        },
+        "Mar 2026": {
+          "live": 22,
+          "drop": 0,
+          "openCreated": 1,
+          "avgTTGL": 18.3,
+          "slaPct": 0.591
+        },
+        "Apr 2026": {
+          "live": 7,
+          "drop": 0,
+          "openCreated": 4,
+          "avgTTGL": 34.9,
+          "slaPct": 0.286
+        }
+      }
+    },
+    {
+      "name": "Aditya Kar",
+      "regions": [
+        "INDIA"
+      ],
+      "total": 86,
+      "live": 82,
+      "drop": 4,
+      "open": 0,
+      "liveRate": 0.953,
+      "dropRate": 0.047,
+      "avgTTGL": 19.0,
+      "slaWithin": 48,
+      "slaPct": 0.585,
+      "openAvgAge": null,
+      "mrrRealised": 683,
+      "mrrPending": 0,
+      "mrrDropped": 166,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 8,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 5.6,
+          "slaPct": 1.0
+        },
+        "May 2025": {
+          "live": 15,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 14.7,
+          "slaPct": 0.667
+        },
+        "Jun 2025": {
+          "live": 15,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 16.8,
+          "slaPct": 0.4
+        },
+        "Jul 2025": {
+          "live": 24,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 21.9,
+          "slaPct": 0.583
+        },
+        "Aug 2025": {
+          "live": 20,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 25.9,
+          "slaPct": 0.5
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Syed Mujahid",
+      "regions": [
+        "MEENA"
+      ],
+      "total": 128,
+      "live": 81,
+      "drop": 32,
+      "open": 15,
+      "liveRate": 0.633,
+      "dropRate": 0.25,
+      "avgTTGL": 28.7,
+      "slaWithin": 33,
+      "slaPct": 0.407,
+      "openAvgAge": null,
+      "mrrRealised": 18455,
+      "mrrPending": 4557,
+      "mrrDropped": 8060,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 1,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 16.0,
+          "slaPct": 0.0
+        },
+        "May 2025": {
+          "live": 5,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 22.2,
+          "slaPct": 0.4
+        },
+        "Jun 2025": {
+          "live": 4,
+          "drop": 5,
+          "openCreated": 0,
+          "avgTTGL": 37.2,
+          "slaPct": 0.0
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 2,
+          "drop": 9,
+          "openCreated": 0,
+          "avgTTGL": 26.0,
+          "slaPct": 0.5
+        },
+        "Sep 2025": {
+          "live": 8,
+          "drop": 4,
+          "openCreated": 0,
+          "avgTTGL": 42.9,
+          "slaPct": 0.25
+        },
+        "Oct 2025": {
+          "live": 6,
+          "drop": 1,
+          "openCreated": 1,
+          "avgTTGL": 19.8,
+          "slaPct": 0.667
+        },
+        "Nov 2025": {
+          "live": 16,
+          "drop": 3,
+          "openCreated": 1,
+          "avgTTGL": 18.1,
+          "slaPct": 0.688
+        },
+        "Dec 2025": {
+          "live": 6,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 16.3,
+          "slaPct": 0.667
+        },
+        "Jan 2026": {
+          "live": 6,
+          "drop": 1,
+          "openCreated": 1,
+          "avgTTGL": 51.7,
+          "slaPct": 0.167
+        },
+        "Feb 2026": {
+          "live": 15,
+          "drop": 1,
+          "openCreated": 3,
+          "avgTTGL": 14.7,
+          "slaPct": 0.533
+        },
+        "Mar 2026": {
+          "live": 5,
+          "drop": 1,
+          "openCreated": 4,
+          "avgTTGL": 50.6,
+          "slaPct": 0.0
+        },
+        "Apr 2026": {
+          "live": 7,
+          "drop": 1,
+          "openCreated": 5,
+          "avgTTGL": 51.9,
+          "slaPct": 0.0
+        }
+      }
+    },
+    {
+      "name": "Shaina Tanwar",
+      "regions": [
+        "INDIA",
+        "MEENA"
+      ],
+      "total": 89,
+      "live": 66,
+      "drop": 19,
+      "open": 4,
+      "liveRate": 0.742,
+      "dropRate": 0.213,
+      "avgTTGL": 42.6,
+      "slaWithin": 17,
+      "slaPct": 0.258,
+      "openAvgAge": null,
+      "mrrRealised": 5208,
+      "mrrPending": 1199,
+      "mrrDropped": 1950,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 4,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 5,
+          "drop": 3,
+          "openCreated": 0,
+          "avgTTGL": 23.8,
+          "slaPct": 0.4
+        },
+        "Jun 2025": {
+          "live": 10,
+          "drop": 3,
+          "openCreated": 0,
+          "avgTTGL": 34.3,
+          "slaPct": 0.2
+        },
+        "Jul 2025": {
+          "live": 5,
+          "drop": 3,
+          "openCreated": 0,
+          "avgTTGL": 40.6,
+          "slaPct": 0.2
+        },
+        "Aug 2025": {
+          "live": 6,
+          "drop": 3,
+          "openCreated": 1,
+          "avgTTGL": 34.3,
+          "slaPct": 0.0
+        },
+        "Sep 2025": {
+          "live": 11,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 33.7,
+          "slaPct": 0.182
+        },
+        "Oct 2025": {
+          "live": 3,
+          "drop": 0,
+          "openCreated": 1,
+          "avgTTGL": 67.7,
+          "slaPct": 0.333
+        },
+        "Nov 2025": {
+          "live": 8,
+          "drop": 1,
+          "openCreated": 1,
+          "avgTTGL": 25.0,
+          "slaPct": 0.625
+        },
+        "Dec 2025": {
+          "live": 2,
+          "drop": 0,
+          "openCreated": 1,
+          "avgTTGL": 59.5,
+          "slaPct": 0.5
+        },
+        "Jan 2026": {
+          "live": 7,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 37.9,
+          "slaPct": 0.0
+        },
+        "Feb 2026": {
+          "live": 2,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 260.5,
+          "slaPct": 0.0
+        },
+        "Mar 2026": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 35.0,
+          "slaPct": 0.0
+        },
+        "Apr 2026": {
+          "live": 6,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 37.8,
+          "slaPct": 0.5
+        }
+      }
+    },
+    {
+      "name": "Akash Shill",
+      "regions": [
+        "US"
+      ],
+      "total": 79,
+      "live": 50,
+      "drop": 24,
+      "open": 5,
+      "liveRate": 0.633,
+      "dropRate": 0.304,
+      "avgTTGL": 30.9,
+      "slaWithin": 28,
+      "slaPct": 0.56,
+      "openAvgAge": null,
+      "mrrRealised": 4693,
+      "mrrPending": 649,
+      "mrrDropped": 3568,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 3,
+          "drop": 3,
+          "openCreated": 0,
+          "avgTTGL": 7.0,
+          "slaPct": 1.0
+        },
+        "Aug 2025": {
+          "live": 6,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 18.3,
+          "slaPct": 0.333
+        },
+        "Sep 2025": {
+          "live": 2,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 4.0,
+          "slaPct": 1.0
+        },
+        "Oct 2025": {
+          "live": 7,
+          "drop": 3,
+          "openCreated": 0,
+          "avgTTGL": 31.1,
+          "slaPct": 0.429
+        },
+        "Nov 2025": {
+          "live": 3,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 9.7,
+          "slaPct": 0.667
+        },
+        "Dec 2025": {
+          "live": 3,
+          "drop": 5,
+          "openCreated": 0,
+          "avgTTGL": 3.3,
+          "slaPct": 1.0
+        },
+        "Jan 2026": {
+          "live": 9,
+          "drop": 3,
+          "openCreated": 1,
+          "avgTTGL": 32.3,
+          "slaPct": 0.556
+        },
+        "Feb 2026": {
+          "live": 5,
+          "drop": 3,
+          "openCreated": 1,
+          "avgTTGL": 7.8,
+          "slaPct": 0.8
+        },
+        "Mar 2026": {
+          "live": 2,
+          "drop": 3,
+          "openCreated": 0,
+          "avgTTGL": 17.5,
+          "slaPct": 0.5
+        },
+        "Apr 2026": {
+          "live": 10,
+          "drop": 0,
+          "openCreated": 3,
+          "avgTTGL": 78.2,
+          "slaPct": 0.3
+        }
+      }
+    },
+    {
+      "name": "Anurag Dutta",
+      "regions": [
+        "INDIA"
+      ],
+      "total": 44,
+      "live": 39,
+      "drop": 0,
+      "open": 5,
+      "liveRate": 0.886,
+      "dropRate": 0.0,
+      "avgTTGL": 12.7,
+      "slaWithin": 26,
+      "slaPct": 0.667,
+      "openAvgAge": null,
+      "mrrRealised": 976,
+      "mrrPending": 195,
+      "mrrDropped": 0,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 3,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 13.7,
+          "slaPct": 0.333
+        },
+        "Nov 2025": {
+          "live": 3,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 18.3,
+          "slaPct": 0.333
+        },
+        "Dec 2025": {
+          "live": 15,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 12.1,
+          "slaPct": 0.667
+        },
+        "Jan 2026": {
+          "live": 5,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 6.8,
+          "slaPct": 1.0
+        },
+        "Feb 2026": {
+          "live": 4,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 13.5,
+          "slaPct": 0.5
+        },
+        "Mar 2026": {
+          "live": 8,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 13.0,
+          "slaPct": 0.875
+        },
+        "Apr 2026": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 5,
+          "avgTTGL": 25.0,
+          "slaPct": 0.0
+        }
+      }
+    },
+    {
+      "name": "Amr Hosny",
+      "regions": [
+        "MEENA"
+      ],
+      "total": 55,
+      "live": 35,
+      "drop": 20,
+      "open": 0,
+      "liveRate": 0.636,
+      "dropRate": 0.364,
+      "avgTTGL": 30.4,
+      "slaWithin": 11,
+      "slaPct": 0.314,
+      "openAvgAge": null,
+      "mrrRealised": 2532,
+      "mrrPending": 0,
+      "mrrDropped": 1180,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 4,
+          "drop": 4,
+          "openCreated": 0,
+          "avgTTGL": 2.8,
+          "slaPct": 1.0
+        },
+        "May 2025": {
+          "live": 8,
+          "drop": 6,
+          "openCreated": 0,
+          "avgTTGL": 10.8,
+          "slaPct": 0.625
+        },
+        "Jun 2025": {
+          "live": 6,
+          "drop": 6,
+          "openCreated": 0,
+          "avgTTGL": 26.2,
+          "slaPct": 0.167
+        },
+        "Jul 2025": {
+          "live": 7,
+          "drop": 3,
+          "openCreated": 0,
+          "avgTTGL": 35.3,
+          "slaPct": 0.0
+        },
+        "Aug 2025": {
+          "live": 4,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 48.8,
+          "slaPct": 0.25
+        },
+        "Sep 2025": {
+          "live": 6,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 61.3,
+          "slaPct": 0.0
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Rakeshram Kannan",
+      "regions": [
+        "INDIA"
+      ],
+      "total": 38,
+      "live": 33,
+      "drop": 5,
+      "open": 0,
+      "liveRate": 0.868,
+      "dropRate": 0.132,
+      "avgTTGL": 14.7,
+      "slaWithin": 17,
+      "slaPct": 0.515,
+      "openAvgAge": null,
+      "mrrRealised": 370,
+      "mrrPending": 0,
+      "mrrDropped": 50,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 2,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 11.5,
+          "slaPct": 0.5
+        },
+        "May 2025": {
+          "live": 12,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 13.8,
+          "slaPct": 0.583
+        },
+        "Jun 2025": {
+          "live": 12,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 13.4,
+          "slaPct": 0.583
+        },
+        "Jul 2025": {
+          "live": 7,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 19.3,
+          "slaPct": 0.286
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Vikash I",
+      "regions": [
+        "UK"
+      ],
+      "total": 49,
+      "live": 29,
+      "drop": 13,
+      "open": 7,
+      "liveRate": 0.592,
+      "dropRate": 0.265,
+      "avgTTGL": 26.3,
+      "slaWithin": 10,
+      "slaPct": 0.345,
+      "openAvgAge": null,
+      "mrrRealised": 7999,
+      "mrrPending": 1081,
+      "mrrDropped": 1638,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 4,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 12.8,
+          "slaPct": 0.5
+        },
+        "Jul 2025": {
+          "live": 5,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 35.6,
+          "slaPct": 0.2
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 2,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 19.5,
+          "slaPct": 0.5
+        },
+        "Oct 2025": {
+          "live": 3,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 21.7,
+          "slaPct": 0.333
+        },
+        "Nov 2025": {
+          "live": 3,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 37.0,
+          "slaPct": 0.333
+        },
+        "Dec 2025": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 19.0,
+          "slaPct": 0.0
+        },
+        "Jan 2026": {
+          "live": 5,
+          "drop": 0,
+          "openCreated": 1,
+          "avgTTGL": 33.0,
+          "slaPct": 0.2
+        },
+        "Feb 2026": {
+          "live": 2,
+          "drop": 4,
+          "openCreated": 1,
+          "avgTTGL": 31.0,
+          "slaPct": 0.5
+        },
+        "Mar 2026": {
+          "live": 3,
+          "drop": 1,
+          "openCreated": 4,
+          "avgTTGL": 16.7,
+          "slaPct": 0.667
+        },
+        "Apr 2026": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 1,
+          "avgTTGL": 24.0,
+          "slaPct": 0.0
+        }
+      }
+    },
+    {
+      "name": "Prinstone Antony",
+      "regions": [
+        "MEENA"
+      ],
+      "total": 27,
+      "live": 27,
+      "drop": 0,
+      "open": 0,
+      "liveRate": 1.0,
+      "dropRate": 0.0,
+      "avgTTGL": 17.2,
+      "slaWithin": 12,
+      "slaPct": 0.444,
+      "openAvgAge": null,
+      "mrrRealised": 2840,
+      "mrrPending": 0,
+      "mrrDropped": 0,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 2,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 3.5,
+          "slaPct": 1.0
+        },
+        "May 2025": {
+          "live": 3,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 18.7,
+          "slaPct": 0.333
+        },
+        "Jun 2025": {
+          "live": 2,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 18.0,
+          "slaPct": 0.5
+        },
+        "Jul 2025": {
+          "live": 6,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 16.7,
+          "slaPct": 0.833
+        },
+        "Aug 2025": {
+          "live": 6,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 17.3,
+          "slaPct": 0.333
+        },
+        "Sep 2025": {
+          "live": 7,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 16.3,
+          "slaPct": 0.143
+        },
+        "Oct 2025": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 48.0,
+          "slaPct": 0.0
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Saadeldin Elabdini",
+      "regions": [
+        "MEENA"
+      ],
+      "total": 35,
+      "live": 26,
+      "drop": 7,
+      "open": 2,
+      "liveRate": 0.743,
+      "dropRate": 0.2,
+      "avgTTGL": 32.5,
+      "slaWithin": 8,
+      "slaPct": 0.308,
+      "openAvgAge": null,
+      "mrrRealised": 1835,
+      "mrrPending": 392,
+      "mrrDropped": 1056,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 1,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 9.0,
+          "slaPct": 1.0
+        },
+        "May 2025": {
+          "live": 10,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 20.8,
+          "slaPct": 0.3
+        },
+        "Jun 2025": {
+          "live": 7,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 35.7,
+          "slaPct": 0.143
+        },
+        "Jul 2025": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 102.0,
+          "slaPct": 0.0
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 1,
+          "drop": 1,
+          "openCreated": 1,
+          "avgTTGL": 22.0,
+          "slaPct": 0.0
+        },
+        "Nov 2025": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 14.0,
+          "slaPct": 1.0
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 1,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 3,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 62.7,
+          "slaPct": 0.333
+        },
+        "Feb 2026": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 5.0,
+          "slaPct": 1.0
+        },
+        "Mar 2026": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 47.0,
+          "slaPct": 0.0
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Srijith YS",
+      "regions": [
+        "UK"
+      ],
+      "total": 33,
+      "live": 25,
+      "drop": 8,
+      "open": 0,
+      "liveRate": 0.758,
+      "dropRate": 0.242,
+      "avgTTGL": 29.8,
+      "slaWithin": 13,
+      "slaPct": 0.52,
+      "openAvgAge": null,
+      "mrrRealised": 4111,
+      "mrrPending": 0,
+      "mrrDropped": 1869,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 4,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 9.8,
+          "slaPct": 0.75
+        },
+        "May 2025": {
+          "live": 1,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 6.0,
+          "slaPct": 1.0
+        },
+        "Jun 2025": {
+          "live": 3,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 15.0,
+          "slaPct": 0.667
+        },
+        "Jul 2025": {
+          "live": 5,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": 24.2,
+          "slaPct": 0.4
+        },
+        "Aug 2025": {
+          "live": 2,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 4.0,
+          "slaPct": 1.0
+        },
+        "Sep 2025": {
+          "live": 4,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 35.8,
+          "slaPct": 0.25
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 4,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 92.0,
+          "slaPct": 0.0
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 2,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 7.0,
+          "slaPct": 1.0
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Karan Sachdev",
+      "regions": [
+        "MEENA"
+      ],
+      "total": 13,
+      "live": 12,
+      "drop": 1,
+      "open": 0,
+      "liveRate": 0.923,
+      "dropRate": 0.077,
+      "avgTTGL": 48.4,
+      "slaWithin": 6,
+      "slaPct": 0.5,
+      "openAvgAge": null,
+      "mrrRealised": 3522,
+      "mrrPending": 0,
+      "mrrDropped": 280,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 10.0,
+          "slaPct": 1.0
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 4,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 72.2,
+          "slaPct": 0.0
+        },
+        "Nov 2025": {
+          "live": 7,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 40.3,
+          "slaPct": 0.714
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Lucy Lopez",
+      "regions": [
+        "UK"
+      ],
+      "total": 11,
+      "live": 8,
+      "drop": 3,
+      "open": 0,
+      "liveRate": 0.727,
+      "dropRate": 0.273,
+      "avgTTGL": 66.4,
+      "slaWithin": 0,
+      "slaPct": 0.0,
+      "openAvgAge": null,
+      "mrrRealised": 2276,
+      "mrrPending": 0,
+      "mrrDropped": 349,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 2,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 51.5,
+          "slaPct": 0.0
+        },
+        "Jul 2025": {
+          "live": 1,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 19.0,
+          "slaPct": 0.0
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 42.0,
+          "slaPct": 0.0
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 2,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 90.0,
+          "slaPct": 0.0
+        },
+        "Jan 2026": {
+          "live": 1,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 101.0,
+          "slaPct": 0.0
+        },
+        "Feb 2026": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 86.0,
+          "slaPct": 0.0
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Ryan Mathew",
+      "regions": [
+        "US"
+      ],
+      "total": 9,
+      "live": 8,
+      "drop": 1,
+      "open": 0,
+      "liveRate": 0.889,
+      "dropRate": 0.111,
+      "avgTTGL": 0.6,
+      "slaWithin": 8,
+      "slaPct": 1.0,
+      "openAvgAge": null,
+      "mrrRealised": 591,
+      "mrrPending": 0,
+      "mrrDropped": 65,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 2.0,
+          "slaPct": 1.0
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 0.0,
+          "slaPct": 1.0
+        },
+        "Jan 2026": {
+          "live": 1,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": 1.0,
+          "slaPct": 1.0
+        },
+        "Feb 2026": {
+          "live": 2,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 0.0,
+          "slaPct": 1.0
+        },
+        "Mar 2026": {
+          "live": 2,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 0.0,
+          "slaPct": 1.0
+        },
+        "Apr 2026": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 2.0,
+          "slaPct": 1.0
+        }
+      }
+    },
+    {
+      "name": "Sourabh Dhawan",
+      "regions": [
+        "UK"
+      ],
+      "total": 10,
+      "live": 7,
+      "drop": 2,
+      "open": 1,
+      "liveRate": 0.7,
+      "dropRate": 0.2,
+      "avgTTGL": 77.3,
+      "slaWithin": 0,
+      "slaPct": 0.0,
+      "openAvgAge": null,
+      "mrrRealised": 1621,
+      "mrrPending": 66,
+      "mrrDropped": 953,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 15.0,
+          "slaPct": 0.0
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 3,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 149.3,
+          "slaPct": 0.0
+        },
+        "Feb 2026": {
+          "live": 2,
+          "drop": 0,
+          "openCreated": 1,
+          "avgTTGL": 21.0,
+          "slaPct": 0.0
+        },
+        "Mar 2026": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 36.0,
+          "slaPct": 0.0
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Mohammed Shueib",
+      "regions": [
+        "US"
+      ],
+      "total": 7,
+      "live": 5,
+      "drop": 1,
+      "open": 1,
+      "liveRate": 0.714,
+      "dropRate": 0.143,
+      "avgTTGL": 16.0,
+      "slaWithin": 3,
+      "slaPct": 0.6,
+      "openAvgAge": null,
+      "mrrRealised": 317,
+      "mrrPending": 250,
+      "mrrDropped": 99,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 2,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 39.5,
+          "slaPct": 0.0
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 2,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 0.5,
+          "slaPct": 1.0
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 1,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 0.0,
+          "slaPct": 1.0
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Anarghya GS",
+      "regions": [
+        "US"
+      ],
+      "total": 10,
+      "live": 4,
+      "drop": 1,
+      "open": 5,
+      "liveRate": 0.4,
+      "dropRate": 0.1,
+      "avgTTGL": 15.2,
+      "slaWithin": 2,
+      "slaPct": 0.5,
+      "openAvgAge": null,
+      "mrrRealised": 196,
+      "mrrPending": 313,
+      "mrrDropped": 49,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 2,
+          "drop": 1,
+          "openCreated": 1,
+          "avgTTGL": 20.0,
+          "slaPct": 0.5
+        },
+        "Apr 2026": {
+          "live": 2,
+          "drop": 0,
+          "openCreated": 4,
+          "avgTTGL": 10.5,
+          "slaPct": 0.5
+        }
+      }
+    },
+    {
+      "name": "Abdalla Edres",
+      "regions": [
+        "MEENA"
+      ],
+      "total": 3,
+      "live": 3,
+      "drop": 0,
+      "open": 0,
+      "liveRate": 1.0,
+      "dropRate": 0.0,
+      "avgTTGL": 22.7,
+      "slaWithin": 1,
+      "slaPct": 0.333,
+      "openAvgAge": null,
+      "mrrRealised": 160,
+      "mrrPending": 0,
+      "mrrDropped": 0,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 12.0,
+          "slaPct": 1.0
+        },
+        "May 2025": {
+          "live": 2,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 28.0,
+          "slaPct": 0.0
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Amaan Haque",
+      "regions": [
+        "MEENA"
+      ],
+      "total": 3,
+      "live": 3,
+      "drop": 0,
+      "open": 0,
+      "liveRate": 1.0,
+      "dropRate": 0.0,
+      "avgTTGL": 46.0,
+      "slaWithin": 0,
+      "slaPct": 0.0,
+      "openAvgAge": null,
+      "mrrRealised": 11,
+      "mrrPending": 0,
+      "mrrDropped": 0,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 3,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 46.0,
+          "slaPct": 0.0
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Rishabh Verma",
+      "regions": [
+        "MEENA"
+      ],
+      "total": 2,
+      "live": 2,
+      "drop": 0,
+      "open": 0,
+      "liveRate": 1.0,
+      "dropRate": 0.0,
+      "avgTTGL": 11.5,
+      "slaWithin": 1,
+      "slaPct": 0.5,
+      "openAvgAge": null,
+      "mrrRealised": 72,
+      "mrrPending": 0,
+      "mrrDropped": 0,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 2,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 11.5,
+          "slaPct": 0.5
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Amal Mureehen",
+      "regions": [
+        "MEENA"
+      ],
+      "total": 2,
+      "live": 2,
+      "drop": 0,
+      "open": 0,
+      "liveRate": 1.0,
+      "dropRate": 0.0,
+      "avgTTGL": 6.5,
+      "slaWithin": 2,
+      "slaPct": 1.0,
+      "openAvgAge": null,
+      "mrrRealised": 70,
+      "mrrPending": 0,
+      "mrrDropped": 0,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 2,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 6.5,
+          "slaPct": 1.0
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Shashank Pandey",
+      "regions": [
+        "MEENA"
+      ],
+      "total": 2,
+      "live": 2,
+      "drop": 0,
+      "open": 0,
+      "liveRate": 1.0,
+      "dropRate": 0.0,
+      "avgTTGL": 36.0,
+      "slaWithin": 0,
+      "slaPct": 0.0,
+      "openAvgAge": null,
+      "mrrRealised": 60,
+      "mrrPending": 0,
+      "mrrDropped": 0,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 2,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 36.0,
+          "slaPct": 0.0
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Anisha Jadhav",
+      "regions": [
+        "UK"
+      ],
+      "total": 2,
+      "live": 2,
+      "drop": 0,
+      "open": 0,
+      "liveRate": 1.0,
+      "dropRate": 0.0,
+      "avgTTGL": 10.5,
+      "slaWithin": 2,
+      "slaPct": 1.0,
+      "openAvgAge": null,
+      "mrrRealised": 299,
+      "mrrPending": 0,
+      "mrrDropped": 0,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 7.0,
+          "slaPct": 1.0
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 14.0,
+          "slaPct": 1.0
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Sushree Saloni Patel",
+      "regions": [
+        "MEENA"
+      ],
+      "total": 9,
+      "live": 2,
+      "drop": 0,
+      "open": 7,
+      "liveRate": 0.222,
+      "dropRate": 0.0,
+      "avgTTGL": 1.0,
+      "slaWithin": 2,
+      "slaPct": 1.0,
+      "openAvgAge": null,
+      "mrrRealised": 740,
+      "mrrPending": 3936,
+      "mrrDropped": 0,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 1,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 4,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 2,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 2,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 1.0,
+          "slaPct": 1.0
+        }
+      }
+    },
+    {
+      "name": "Arman Alam",
+      "regions": [
+        "INDIA"
+      ],
+      "total": 1,
+      "live": 1,
+      "drop": 0,
+      "open": 0,
+      "liveRate": 1.0,
+      "dropRate": 0.0,
+      "avgTTGL": 72.0,
+      "slaWithin": 0,
+      "slaPct": 0.0,
+      "openAvgAge": null,
+      "mrrRealised": 69,
+      "mrrPending": 0,
+      "mrrDropped": 0,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 72.0,
+          "slaPct": 0.0
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Vijay S",
+      "regions": [
+        "US"
+      ],
+      "total": 1,
+      "live": 1,
+      "drop": 0,
+      "open": 0,
+      "liveRate": 1.0,
+      "dropRate": 0.0,
+      "avgTTGL": 107.0,
+      "slaWithin": 0,
+      "slaPct": 0.0,
+      "openAvgAge": null,
+      "mrrRealised": 295,
+      "mrrPending": 0,
+      "mrrDropped": 0,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 1,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": 107.0,
+          "slaPct": 0.0
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Mohasin Sangolli",
+      "regions": [
+        "INDIA"
+      ],
+      "total": 2,
+      "live": 0,
+      "drop": 2,
+      "open": 0,
+      "liveRate": 0.0,
+      "dropRate": 1.0,
+      "avgTTGL": null,
+      "slaWithin": 0,
+      "slaPct": 0,
+      "openAvgAge": null,
+      "mrrRealised": 0,
+      "mrrPending": 0,
+      "mrrDropped": 223,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Rahul Kumar",
+      "regions": [
+        "INDIA"
+      ],
+      "total": 2,
+      "live": 0,
+      "drop": 2,
+      "open": 0,
+      "liveRate": 0.0,
+      "dropRate": 1.0,
+      "avgTTGL": null,
+      "slaWithin": 0,
+      "slaPct": 0,
+      "openAvgAge": null,
+      "mrrRealised": 0,
+      "mrrPending": 0,
+      "mrrDropped": 50,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Rishika Sinha",
+      "regions": [
+        "INDIA"
+      ],
+      "total": 7,
+      "live": 0,
+      "drop": 7,
+      "open": 0,
+      "liveRate": 0.0,
+      "dropRate": 1.0,
+      "avgTTGL": null,
+      "slaWithin": 0,
+      "slaPct": 0,
+      "openAvgAge": null,
+      "mrrRealised": 0,
+      "mrrPending": 0,
+      "mrrDropped": 132,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 4,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Jibran Zulfkar Bhat",
+      "regions": [
+        "INDIA",
+        "MEENA"
+      ],
+      "total": 5,
+      "live": 0,
+      "drop": 2,
+      "open": 3,
+      "liveRate": 0.0,
+      "dropRate": 0.4,
+      "avgTTGL": null,
+      "slaWithin": 0,
+      "slaPct": 0,
+      "openAvgAge": null,
+      "mrrRealised": 0,
+      "mrrPending": 81,
+      "mrrDropped": 9,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 3,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Debangshu G",
+      "regions": [
+        "INDIA"
+      ],
+      "total": 12,
+      "live": 0,
+      "drop": 12,
+      "open": 0,
+      "liveRate": 0.0,
+      "dropRate": 1.0,
+      "avgTTGL": null,
+      "slaWithin": 0,
+      "slaPct": 0,
+      "openAvgAge": null,
+      "mrrRealised": 0,
+      "mrrPending": 0,
+      "mrrDropped": 1984,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 5,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Nadeem Jatu",
+      "regions": [
+        "INDIA",
+        "US"
+      ],
+      "total": 7,
+      "live": 0,
+      "drop": 3,
+      "open": 4,
+      "liveRate": 0.0,
+      "dropRate": 0.429,
+      "avgTTGL": null,
+      "slaWithin": 0,
+      "slaPct": 0,
+      "openAvgAge": null,
+      "mrrRealised": 0,
+      "mrrPending": 196,
+      "mrrDropped": 392,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 2,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 2,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Sonal Joshi",
+      "regions": [
+        "MEENA",
+        "UK"
+      ],
+      "total": 2,
+      "live": 0,
+      "drop": 0,
+      "open": 2,
+      "liveRate": 0.0,
+      "dropRate": 0.0,
+      "avgTTGL": null,
+      "slaWithin": 0,
+      "slaPct": 0,
+      "openAvgAge": null,
+      "mrrRealised": 0,
+      "mrrPending": 107,
+      "mrrDropped": 0,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 1,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 1,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Nikhil Kumar",
+      "regions": [
+        "INDIA"
+      ],
+      "total": 4,
+      "live": 0,
+      "drop": 4,
+      "open": 0,
+      "liveRate": 0.0,
+      "dropRate": 1.0,
+      "avgTTGL": null,
+      "slaWithin": 0,
+      "slaPct": 0,
+      "openAvgAge": null,
+      "mrrRealised": 0,
+      "mrrPending": 0,
+      "mrrDropped": 210,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Amir Siddiqui",
+      "regions": [
+        "INDIA"
+      ],
+      "total": 4,
+      "live": 0,
+      "drop": 2,
+      "open": 2,
+      "liveRate": 0.0,
+      "dropRate": 0.5,
+      "avgTTGL": null,
+      "slaWithin": 0,
+      "slaPct": 0,
+      "openAvgAge": null,
+      "mrrRealised": 0,
+      "mrrPending": 451,
+      "mrrDropped": 284,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 2,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Mayank Pathak",
+      "regions": [
+        "MEENA"
+      ],
+      "total": 13,
+      "live": 0,
+      "drop": 12,
+      "open": 1,
+      "liveRate": 0.0,
+      "dropRate": 0.923,
+      "avgTTGL": null,
+      "slaWithin": 0,
+      "slaPct": 0,
+      "openAvgAge": null,
+      "mrrRealised": 0,
+      "mrrPending": 140,
+      "mrrDropped": 5729,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 1,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 3,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 2,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 5,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Manvi Bhatt",
+      "regions": [
+        "INDIA"
+      ],
+      "total": 5,
+      "live": 0,
+      "drop": 4,
+      "open": 1,
+      "liveRate": 0.0,
+      "dropRate": 0.8,
+      "avgTTGL": null,
+      "slaWithin": 0,
+      "slaPct": 0,
+      "openAvgAge": null,
+      "mrrRealised": 0,
+      "mrrPending": 16,
+      "mrrDropped": 307,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 3,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 1,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Pavitra Hiralal Parmar",
+      "regions": [
+        "INDIA"
+      ],
+      "total": 1,
+      "live": 0,
+      "drop": 1,
+      "open": 0,
+      "liveRate": 0.0,
+      "dropRate": 1.0,
+      "avgTTGL": null,
+      "slaWithin": 0,
+      "slaPct": 0,
+      "openAvgAge": null,
+      "mrrRealised": 0,
+      "mrrPending": 0,
+      "mrrDropped": 0,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Hrithik Anand",
+      "regions": [
+        "INDIA"
+      ],
+      "total": 1,
+      "live": 0,
+      "drop": 1,
+      "open": 0,
+      "liveRate": 0.0,
+      "dropRate": 1.0,
+      "avgTTGL": null,
+      "slaWithin": 0,
+      "slaPct": 0,
+      "openAvgAge": null,
+      "mrrRealised": 0,
+      "mrrPending": 0,
+      "mrrDropped": 3,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Priyank Patodi",
+      "regions": [
+        "UK"
+      ],
+      "total": 1,
+      "live": 0,
+      "drop": 0,
+      "open": 1,
+      "liveRate": 0.0,
+      "dropRate": 0.0,
+      "avgTTGL": null,
+      "slaWithin": 0,
+      "slaPct": 0,
+      "openAvgAge": null,
+      "mrrRealised": 0,
+      "mrrPending": 132,
+      "mrrDropped": 0,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 1,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    },
+    {
+      "name": "Onboarding Manager Leads - USA",
+      "regions": [
+        "US"
+      ],
+      "total": 4,
+      "live": 0,
+      "drop": 1,
+      "open": 3,
+      "liveRate": 0.0,
+      "dropRate": 0.25,
+      "avgTTGL": null,
+      "slaWithin": 0,
+      "slaPct": 0,
+      "openAvgAge": null,
+      "mrrRealised": 0,
+      "mrrPending": 178,
+      "mrrDropped": 49,
+      "monthlyTrend": {
+        "Apr 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "May 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jun 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jul 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Aug 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Sep 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Oct 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Nov 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Dec 2025": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Jan 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Feb 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 0,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Mar 2026": {
+          "live": 0,
+          "drop": 1,
+          "openCreated": 1,
+          "avgTTGL": null,
+          "slaPct": null
+        },
+        "Apr 2026": {
+          "live": 0,
+          "drop": 0,
+          "openCreated": 2,
+          "avgTTGL": null,
+          "slaPct": null
+        }
+      }
+    }
+  ],
+  "summary": {
+    "totalOMs": 49,
+    "totalProjects": 2128,
+    "overallSLAPct": 0.51,
+    "overallAvgTTGL": 29.3
+  }
+}
