@@ -1,5 +1,5 @@
 {
-  "computedAt": "2026-04-22",
+  "computedAt": "2026-04-23",
   "regions": [
     {
       "name": "INDIA",
@@ -164,16 +164,16 @@
         },
         {
           "month": "Apr 2026",
-          "cwValue": 664,
-          "m0": 261,
+          "cwValue": 725,
+          "m0": 294,
           "m1": null,
           "m2": null,
           "m3": null,
           "m4": null,
           "m5": null,
           "m6plus": null,
-          "revRealised": 261,
-          "pctRealised": 0.3931
+          "revRealised": 294,
+          "pctRealised": 0.4055
         }
       ]
     },
@@ -340,7 +340,7 @@
         },
         {
           "month": "Apr 2026",
-          "cwValue": 6949,
+          "cwValue": 7134,
           "m0": 2373,
           "m1": null,
           "m2": null,
@@ -349,7 +349,7 @@
           "m5": null,
           "m6plus": null,
           "revRealised": 2373,
-          "pctRealised": 0.3415
+          "pctRealised": 0.3326
         }
       ]
     },
@@ -653,36 +653,36 @@
         },
         {
           "month": "Apr 2026",
-          "cwValue": 1497,
-          "m0": 387,
+          "cwValue": 1312,
+          "m0": 466,
           "m1": null,
           "m2": null,
           "m3": null,
           "m4": null,
           "m5": null,
           "m6plus": null,
-          "revRealised": 387,
-          "pctRealised": 0.2585
+          "revRealised": 466,
+          "pctRealised": 0.3552
         }
       ]
     }
   ],
   "openPendingMRR": {
     "INDIA": {
-      "mrr": 1366,
+      "mrr": 1394,
       "count": 29
     },
     "MEENA": {
-      "mrr": 13894,
-      "count": 71
+      "mrr": 14079,
+      "count": 74
     },
     "UK": {
       "mrr": 1495,
       "count": 11
     },
     "US": {
-      "mrr": 3228,
-      "count": 35
+      "mrr": 2965,
+      "count": 42
     }
   }
 }
